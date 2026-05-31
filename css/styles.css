@@ -1,0 +1,509 @@
+/* ── LoreRim V Journal — Custom Styles ────────────────────────────── */
+
+/* Fonts */
+body {
+  font-family: 'EB Garamond', Georgia, serif;
+  background-color: #0d0d10;
+  color: #d4cfc4;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, .cinzel {
+  font-family: 'Cinzel', 'Times New Roman', serif;
+  letter-spacing: 0.06em;
+}
+
+.cinzel-deco {
+  font-family: 'Cinzel Decorative', 'Cinzel', serif;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #111118; }
+::-webkit-scrollbar-thumb { background: rgba(212,168,67,0.35); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(212,168,67,0.6); }
+
+/* ── Sidebar ───────────────────────────────────────────────────────── */
+#sidebar {
+  background-color: #111118;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v1H0zM0 20h40v1H0zM0 0v40h1V0zM20 0v40h1V0z' fill='%23ffffff' fill-opacity='0.025'/%3E%3C/svg%3E");
+  border-right: 1px solid rgba(212,168,67,0.15);
+  transition: transform 0.25s ease;
+}
+
+.sidebar-logo {
+  background: linear-gradient(180deg, rgba(212,168,67,0.12) 0%, transparent 100%);
+  border-bottom: 1px solid rgba(212,168,67,0.2);
+}
+
+.sidebar-logo-title {
+  font-family: 'Cinzel Decorative', 'Cinzel', serif;
+  color: #d4a843;
+  text-shadow: 0 0 20px rgba(212,168,67,0.4);
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+/* ── Nav Items ─────────────────────────────────────────────────────── */
+.nav-item {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9a9080;
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  border-left: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+.nav-item:hover {
+  color: #d4cfc4;
+  border-left-color: rgba(212,168,67,0.4);
+  background: rgba(212,168,67,0.04);
+}
+.nav-item.active {
+  color: #d4a843;
+  border-left-color: #d4a843;
+  background: rgba(212,168,67,0.08);
+}
+.nav-item .nav-icon { font-size: 0.95rem; width: 1.2rem; text-align: center; }
+
+.nav-section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(212,168,67,0.4);
+  padding: 0.9rem 1rem 0.2rem;
+}
+
+/* ── Arcaneum Link ─────────────────────────────────────────────────── */
+.arcaneum-link {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: #d4a843;
+  border: 1px solid rgba(212,168,67,0.3);
+  border-radius: 3px;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all 0.15s;
+  background: rgba(212,168,67,0.04);
+}
+.arcaneum-link:hover {
+  background: rgba(212,168,67,0.1);
+  border-color: rgba(212,168,67,0.6);
+  color: #e8c96d;
+  text-shadow: 0 0 8px rgba(212,168,67,0.4);
+}
+
+/* ── Main Content ──────────────────────────────────────────────────── */
+#main-content {
+  background-color: #0d0d10;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* ── Section Header ────────────────────────────────────────────────── */
+.section-header {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  color: #d4a843;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25rem;
+}
+
+.ornament { color: rgba(212,168,67,0.5); letter-spacing: 0.2em; font-size: 0.75rem; }
+
+/* ── Cards ─────────────────────────────────────────────────────────── */
+.card {
+  background: #1a1a22;
+  border: 1px solid rgba(212,168,67,0.15);
+  border-top: 2px solid rgba(212,168,67,0.35);
+  border-radius: 4px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.03);
+}
+
+.card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #d4a843;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Buttons ───────────────────────────────────────────────────────── */
+.btn {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.45rem 1rem;
+  border-radius: 3px;
+  border: 1px solid rgba(212,168,67,0.5);
+  background: rgba(212,168,67,0.06);
+  color: #d4a843;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.btn:hover {
+  background: rgba(212,168,67,0.14);
+  border-color: #d4a843;
+  color: #e8c96d;
+  box-shadow: 0 0 8px rgba(212,168,67,0.2);
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: rgba(212,168,67,0.15);
+  border-color: #d4a843;
+  color: #e8c96d;
+}
+.btn-primary:hover { background: rgba(212,168,67,0.25); }
+
+.btn-danger {
+  border-color: rgba(180,60,60,0.5);
+  background: rgba(180,60,60,0.06);
+  color: #c07070;
+}
+.btn-danger:hover { background: rgba(180,60,60,0.15); border-color: #c07070; color: #e08080; }
+
+.btn-sm { font-size: 0.6rem; padding: 0.3rem 0.65rem; }
+
+/* ── Inputs ────────────────────────────────────────────────────────── */
+.input, .textarea, .select {
+  background: #12121a;
+  border: 1px solid rgba(212,168,67,0.2);
+  border-radius: 3px;
+  color: #d4cfc4;
+  padding: 0.45rem 0.65rem;
+  font-family: 'EB Garamond', serif;
+  font-size: 0.95rem;
+  width: 100%;
+  transition: border-color 0.15s;
+  outline: none;
+}
+.input:focus, .textarea:focus, .select:focus {
+  border-color: rgba(212,168,67,0.5);
+  box-shadow: 0 0 0 2px rgba(212,168,67,0.08);
+}
+.input::placeholder, .textarea::placeholder { color: rgba(212,168,67,0.25); font-style: italic; }
+.textarea { resize: vertical; min-height: 80px; }
+.select option { background: #1a1a22; }
+
+label.field-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(212,168,67,0.6);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+/* ── Sub-tabs ──────────────────────────────────────────────────────── */
+.subtab-bar {
+  display: flex;
+  border-bottom: 1px solid rgba(212,168,67,0.15);
+  margin-bottom: 1.25rem;
+  gap: 0;
+}
+.subtab {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9a9080;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all 0.15s;
+}
+.subtab:hover { color: #d4cfc4; }
+.subtab.active { color: #d4a843; border-bottom-color: #d4a843; }
+
+/* ── Tag Badges ────────────────────────────────────────────────────── */
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+  border: 1px solid rgba(212,168,67,0.3);
+  color: rgba(212,168,67,0.7);
+  background: rgba(212,168,67,0.06);
+  display: inline-block;
+}
+.tag:hover { border-color: rgba(212,168,67,0.6); cursor: pointer; }
+.tag.active { background: rgba(212,168,67,0.15); color: #d4a843; border-color: #d4a843; }
+
+/* ── Journal Cards ─────────────────────────────────────────────────── */
+.journal-card {
+  background: #1c1a14;
+  border: 1px solid rgba(212,168,67,0.12);
+  border-left: 3px solid rgba(212,168,67,0.3);
+  border-radius: 3px;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  position: relative;
+}
+.journal-card:hover { border-left-color: #d4a843; background: #211f17; }
+.journal-card.active { border-left-color: #d4a843; background: #211f17; }
+
+.journal-date {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: rgba(212,168,67,0.5);
+  text-transform: uppercase;
+}
+
+.journal-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  color: #d4cfc4;
+  margin: 0.15rem 0;
+}
+
+/* ── Accordion ─────────────────────────────────────────────────────── */
+.accordion-header {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #d4a843;
+  cursor: pointer;
+  padding: 0.65rem 0.85rem;
+  background: rgba(212,168,67,0.05);
+  border: 1px solid rgba(212,168,67,0.15);
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+.accordion-header:hover { background: rgba(212,168,67,0.09); }
+.accordion-body { border: 1px solid rgba(212,168,67,0.1); border-top: none; border-radius: 0 0 3px 3px; padding: 0.75rem; background: #161620; }
+
+/* ── Quest Row ─────────────────────────────────────────────────────── */
+.quest-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.quest-row:last-child { border-bottom: none; }
+input[type="checkbox"].rune-check {
+  appearance: none;
+  width: 14px; height: 14px;
+  border: 1px solid rgba(212,168,67,0.4);
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  background: #12121a;
+}
+input[type="checkbox"].rune-check:checked {
+  background: rgba(212,168,67,0.2);
+  border-color: #d4a843;
+}
+input[type="checkbox"].rune-check:checked::after {
+  content: '✓';
+  position: absolute;
+  top: -2px; left: 1px;
+  font-size: 10px;
+  color: #d4a843;
+}
+
+/* ── Equipment Slots ───────────────────────────────────────────────── */
+.equip-slot {
+  background: #12121a;
+  border: 1px solid rgba(212,168,67,0.15);
+  border-radius: 4px;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  min-height: 70px;
+}
+.equip-slot:hover, .equip-slot.filled { border-color: rgba(212,168,67,0.4); background: #17171f; }
+.equip-slot-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(212,168,67,0.45);
+  margin-bottom: 0.25rem;
+}
+.equip-slot-name { font-size: 0.85rem; color: #d4cfc4; }
+.equip-slot-enchant { font-size: 0.75rem; color: rgba(212,168,67,0.5); font-style: italic; }
+
+/* ── Mod Table ─────────────────────────────────────────────────────── */
+.mod-row {
+  display: grid;
+  grid-template-columns: 2rem 1fr 7rem 5rem 2.5rem;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 0.88rem;
+}
+.mod-row:hover { background: rgba(212,168,67,0.03); }
+.mod-notes-expand { background: #141420; border: 1px solid rgba(212,168,67,0.1); border-top: none; padding: 0.6rem; }
+
+/* ── Stat Pill ─────────────────────────────────────────────────────── */
+.stat-pill {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid rgba(212,168,67,0.25);
+  border-radius: 4px;
+  background: #12121a;
+  min-width: 80px;
+}
+.stat-pill-value {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  color: #d4a843;
+  line-height: 1.1;
+}
+.stat-pill-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(212,168,67,0.5);
+  margin-top: 0.2rem;
+}
+
+/* ── Artifact Cards ────────────────────────────────────────────────── */
+.artifact-card {
+  background: #12121a;
+  border: 1px solid rgba(212,168,67,0.12);
+  border-radius: 4px;
+  padding: 0.7rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+.artifact-card.collected {
+  background: rgba(212,168,67,0.07);
+  border-color: rgba(212,168,67,0.4);
+}
+.artifact-card:hover { border-color: rgba(212,168,67,0.3); }
+.artifact-icon { font-size: 1.4rem; margin-bottom: 0.25rem; }
+.artifact-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9a9080;
+  line-height: 1.3;
+}
+.artifact-card.collected .artifact-name { color: #d4a843; }
+
+/* ── Stance Toggle ─────────────────────────────────────────────────── */
+.stance-btn {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(212,168,67,0.2);
+  cursor: pointer;
+  transition: all 0.15s;
+  background: #12121a;
+  color: #9a9080;
+}
+.stance-btn:hover { border-color: rgba(212,168,67,0.4); color: #d4cfc4; }
+.stance-btn.active { background: rgba(212,168,67,0.12); border-color: #d4a843; color: #d4a843; }
+.stance-btn:first-child { border-radius: 3px 0 0 3px; }
+.stance-btn:last-child { border-radius: 0 3px 3px 0; }
+
+/* ── Bond Stars ────────────────────────────────────────────────────── */
+.bond-star { cursor: pointer; font-size: 1rem; color: rgba(212,168,67,0.2); transition: color 0.1s; }
+.bond-star.filled { color: #d4a843; }
+
+/* ── Favor Slider ──────────────────────────────────────────────────── */
+input[type="range"].gold-slider {
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #d4a843 var(--val, 0%), #2a2a35 var(--val, 0%));
+  border-radius: 2px;
+  outline: none;
+}
+input[type="range"].gold-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: #d4a843;
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(212,168,67,0.5);
+}
+
+/* ── Collapsed Sidebar ─────────────────────────────────────────────── */
+#sidebar.collapsed { transform: translateX(-100%); }
+@media (min-width: 1024px) { #sidebar.collapsed { transform: none; } }
+
+/* ── Portrait Upload ───────────────────────────────────────────────── */
+.portrait-area {
+  width: 120px; height: 150px;
+  border: 1px solid rgba(212,168,67,0.25);
+  border-radius: 4px;
+  background: #12121a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.portrait-area img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ── Utility collapsible ───────────────────────────────────────────── */
+.util-panel { margin-bottom: 0.75rem; }
+.util-panel-header {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #d4a843;
+  background: rgba(212,168,67,0.05);
+  border: 1px solid rgba(212,168,67,0.15);
+  border-radius: 3px;
+  padding: 0.6rem 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+.util-panel-header:hover { background: rgba(212,168,67,0.08); }
+.util-panel-body {
+  border: 1px solid rgba(212,168,67,0.1);
+  border-top: none;
+  padding: 1rem;
+  background: #161620;
+  border-radius: 0 0 3px 3px;
+}
+
+/* ── Responsive ────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .mod-row { grid-template-columns: 1.5rem 1fr 5rem 2.5rem; }
+  .mod-row .mod-cat { display: none; }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoreRim V — Character Journal</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script>
+    // Config must be set BEFORE Tailwind loads
+    window.tailwind = window.tailwind || {};
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gold: { 300:'#e8c96d', 400:'#d4a843', 500:'#b8891e' },
+            parchment: { 100:'#f5efe0', 200:'#ede3c8' },
+            stone: { 800:'#1e1e24', 900:'#141418', 950:'#0d0d10' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- App Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; padding: 0; }
+    #app { display: flex; height: 100vh; overflow: hidden; }
+    #sidebar { width: 220px; flex-shrink: 0; display: flex; flex-direction: column; height: 100vh; overflow-y: auto; position: fixed; top: 0; left: 0; z-index: 100; }
+    #main-wrapper { margin-left: 220px; flex: 1; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+    #main-header { flex-shrink: 0; }
+    #main-content { flex: 1; overflow-y: auto; }
+    #sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 99; }
+    @media (max-width: 1023px) {
+      #main-wrapper { margin-left: 0; }
+      #sidebar { transform: translateX(-100%); transition: transform 0.25s ease; }
+      #sidebar:not(.collapsed) { transform: translateX(0); }
+    }
+    @media (min-width: 1024px) {
+      #sidebar { transform: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+<div id="app">
+
+  <!-- ── Sidebar ──────────────────────────────────────────────────── -->
+  <nav id="sidebar">
+
+    <!-- Logo / Title -->
+    <div class="sidebar-logo" style="padding:1.25rem 1rem 1rem;">
+      <div class="sidebar-logo-title" style="text-align:center;">
+        ☽ LORERIM V ☾
+      </div>
+      <div style="text-align:center;font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.18em;color:rgba(212,168,67,0.35);text-transform:uppercase;margin-top:0.2rem;">Character Journal</div>
+    </div>
+
+    <!-- Nav items (populated by app.js) -->
+    <div id="sidebar-nav" style="flex:1;padding:0.5rem 0;"></div>
+
+    <!-- Arcaneum Link -->
+    <div style="padding:0.75rem 0.75rem 1rem;">
+      <div class="nav-section-label" style="padding:0 0.25rem 0.4rem;">External</div>
+      <a href="https://bardicnoel.github.io/lorerim-arcaneum/" target="_blank" rel="noopener" class="arcaneum-link">
+        <span>📚</span>
+        <span style="flex:1;">LoreRim Arcaneum</span>
+        <span style="font-size:0.65rem;opacity:0.6;">↗</span>
+      </a>
+    </div>
+
+  </nav>
+
+  <!-- Mobile sidebar overlay -->
+  <div id="sidebar-overlay"></div>
+
+  <!-- ── Main Area ─────────────────────────────────────────────────── -->
+  <div id="main-wrapper">
+
+    <!-- Top bar -->
+    <header id="main-header" style="
+      background:#111118;
+      border-bottom:1px solid rgba(212,168,67,0.12);
+      padding:0.6rem 1.25rem;
+      display:flex;
+      align-items:center;
+      gap:0.75rem;
+    ">
+      <!-- Mobile menu toggle -->
+      <button onclick="toggleSidebar()" style="
+        display:none;
+        background:none;border:none;color:#d4a843;cursor:pointer;font-size:1.2rem;padding:0.1rem;
+      " id="hamburger-btn" aria-label="Toggle menu">☰</button>
+
+      <!-- Breadcrumb char name -->
+      <span style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.12em;color:rgba(212,168,67,0.35);">CHRONICLE</span>
+      <span style="color:rgba(212,168,67,0.2);">›</span>
+      <span id="header-char-name" style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.1em;color:rgba(212,168,67,0.5);">No character yet</span>
+
+      <div style="margin-left:auto;display:flex;align-items:center;gap:0.75rem;">
+        <button class="btn btn-sm" onclick="downloadBackup()" title="Quick backup" style="font-size:0.58rem;">💾 Backup</button>
+        <span style="font-family:'Cinzel',serif;font-size:0.58rem;color:#333;letter-spacing:0.08em;">LoreRim V</span>
+      </div>
+    </header>
+
+    <!-- Content renders here -->
+    <main id="main-content">
+      <!-- Populated by navigate() in app.js -->
+      <div style="display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;gap:1rem;color:#333;">
+        <div style="font-size:2.5rem;">⚔️</div>
+        <div style="font-family:'Cinzel',serif;font-size:0.8rem;letter-spacing:0.15em;">Loading Chronicle…</div>
+      </div>
+    </main>
+
+  </div>
+</div>
+
+<!-- Mobile hamburger visibility -->
+<style>
+  @media (max-width: 1023px) { #hamburger-btn { display: block !important; } }
+</style>
+
+<!-- ── Scripts (order matters) ─────────────────────────────────────── -->
+<script src="js/state.js"></script>
+<script src="js/sections/dashboard.js"></script>
+<script src="js/sections/journal.js"></script>
+<script src="js/sections/character.js"></script>
+<script src="js/sections/build.js"></script>
+<script src="js/sections/mods.js"></script>
+<script src="js/sections/mechanics.js"></script>
+<script src="js/sections/utilities.js"></script>
+<script src="js/sections/backup.js"></script>
+<script src="js/pdf.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
