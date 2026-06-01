@@ -102,8 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Navigate to dashboard
   navigate('dashboard');
 
-  // Update character name in header if set
+  // Update header and sidebar links from state
   updateHeaderName();
+  updateSidebarLinks();
 });
 
 function updateHeaderName() {
@@ -112,6 +113,19 @@ function updateHeaderName() {
     nameEl.textContent = window.appState.character.name;
   }
 }
+
+function updateSidebarLinks() {
+  const url = window.appState.siteConfig?.notebookLmUrl;
+  const linkEl = document.getElementById('notebooklm-sidebar-link');
+  if (!linkEl) return;
+  if (url) {
+    linkEl.href = url;
+    linkEl.style.display = 'flex';
+  } else {
+    linkEl.style.display = 'none';
+  }
+}
+window.updateSidebarLinks = updateSidebarLinks;
 
 // Expose globals needed by inline HTML event handlers
 window.navigate        = navigate;
@@ -170,6 +184,8 @@ window.exportNotebookBuild = exportNotebookBuild;
 window.exportNotebookMods  = exportNotebookMods;
 window.exportNotebookWorld = exportNotebookWorld;
 window.exportAllNotebook   = exportAllNotebook;
+window.exportPublicModGuide = exportPublicModGuide;
+window.saveNotebookLmUrl   = saveNotebookLmUrl;
 window.renderBuild         = renderBuild;
 window.saveBuild          = saveBuild;
 window.addMilestone       = addMilestone;

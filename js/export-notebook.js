@@ -401,6 +401,126 @@ function exportNotebookWorld() {
   showToast('World State exported.');
 }
 
+// ── Public Mod Guide (database-driven, for community NotebookLM) ─────
+async function exportPublicModGuide() {
+  // Load DB if not yet fetched
+  if (!modDb) await loadModDatabase();
+
+  const db     = modDb || {};
+  const appMods = window.appState.mods || [];
+
+  // Merge: DB entries + any app mods not in DB
+  const allEntries = {};
+
+  // Start with full DB
+  for (const [name, data] of Object.entries(db)) {
+    allEntries[name] = { ...data, fromDb: true, enabled: true, personalNotes: '' };
+  }
+
+  // Layer in any app mods — add ones not in DB, enrich DB entries with personal notes
+  for (const mod of appMods) {
+    const match = Object.keys(allEntries).find(k =>
+      k.toLowerCase() === mod.name.toLowerCase() || normaliseName(k) === normaliseName(mod.name)
+    );
+    if (match) {
+      if (mod.notes && mod.notes !== allEntries[match].summary) {
+        allEntries[match].personalNotes = mod.notes;
+      }
+      allEntries[match].enabled = mod.enabled;
+    } else if (mod.notes || mod.enabled !== false) {
+      allEntries[mod.name] = {
+        summary: mod.notes || '',
+        category: mod.category || 'Other',
+        author: '',
+        nexusUrl: mod.nexusUrl || '',
+        tags: mod.dbTags || [],
+        fromDb: false,
+        enabled: mod.enabled,
+        personalNotes: ''
+      };
+    }
+  }
+
+  // Group by category
+  const grouped = {};
+  for (const [name, data] of Object.entries(allEntries)) {
+    if (data.enabled === false) continue; // skip disabled
+    const cat = data.category || 'Other';
+    (grouped[cat] = grouped[cat] || []).push({ name, ...data });
+  }
+
+  const catOrder = ['Framework','Overhaul','Gameplay','Combat','Survival','Quest','Immersion','Gear','Visuals','Audio','UI','Patch','Other'];
+  const allCats  = [...new Set([...catOrder, ...Object.keys(grouped)])];
+  const total    = Object.values(grouped).reduce((s, arr) => s + arr.length, 0);
+
+  const lines = [
+    '# LoreRim 5 — Complete Mod Reference Guide',
+    `*${total} mods · Wabbajack modlist by Biggie_Boss · LoreRim v5.0*`,
+    '',
+    '> This document is a comprehensive reference for every mod included in the LoreRim 5 modpack.',
+    '> Use it to ask questions like "What does Requiem do?", "Which mods affect magic?",',
+    '> "How does the faith system work?", or "What visual mods are included?"',
+    '',
+    '---',
+    '',
+    '## Modpack Overview',
+    '',
+    'LoreRim 5 is a Wabbajack modlist for Skyrim Anniversary Edition built around **Requiem — The Roleplaying Overhaul**.',
+    'It prioritises immersive, challenging roleplay with a fully deleveled world, deep character building through the',
+    'EnaiRim suite of gameplay overhauls, and high-fidelity visuals.',
+    '',
+    '**Core design pillars:**',
+    '- Deleveled world (Requiem) — enemy difficulty is stat-based, not level-scaled',
+    '- Deep character creation — permanent birthsign, traits, and skill choices',
+    '- Survival mechanics (Frostfall, iNeed, Campfire)',
+    '- Religion system (Wintersun)',
+    '- Modern visuals (ENB, DynDOLOD)',
+    '- Expanded content (NPCs, quests, equipment)',
+    '',
+    '---',
+    '',
+  ];
+
+  for (const cat of allCats) {
+    const mods = grouped[cat];
+    if (!mods?.length) continue;
+
+    lines.push(`## ${cat} Mods (${mods.length})`);
+    lines.push('');
+
+    for (const mod of mods.sort((a,b) => a.name.localeCompare(b.name))) {
+      lines.push(`### ${mod.name}`);
+      if (mod.author)   lines.push(`**Author:** ${mod.author}`);
+      if (mod.nexusUrl) lines.push(`**Nexus:** ${mod.nexusUrl}`);
+      if (mod.tags?.length) lines.push(`**Tags:** ${mod.tags.join(' · ')}`);
+      lines.push('');
+      if (mod.summary)       lines.push(mod.summary);
+      if (mod.personalNotes) lines.push('', `*Additional notes:* ${mod.personalNotes}`);
+      lines.push('');
+    }
+
+    lines.push('---', '');
+  }
+
+  lines.push(
+    '## How to Use This Document with NotebookLM',
+    '',
+    'Upload this file to Google NotebookLM alongside other LoreRim 5 sources.',
+    'Example questions you can ask:',
+    '',
+    '- "What is Requiem and how does it change Skyrim?"',
+    '- "Which mods in this list affect magic and spellcasting?"',
+    '- "How do Wintersun and Requiem interact?"',
+    '- "What survival mechanics are in LoreRim 5?"',
+    '- "Which mods add new quests or locations?"',
+    '- "What visual mods are included and what do they do?"',
+    '- "Are there any known incompatibilities or removed mods in version 5?"',
+  );
+
+  downloadMd('lorerim5-public-mod-guide.md', nl(lines));
+  showToast('Public Mod Guide exported.');
+}
+
 // ── Export All (sequential downloads) ────────────────────────────────
 async function exportAllNotebook() {
   exportNotebookLore();

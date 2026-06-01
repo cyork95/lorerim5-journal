@@ -21,10 +21,27 @@ function renderBackup() {
     </div>
   </div>
 
-  <!-- NotebookLM Export -->
+  <!-- NotebookLM Config & Export -->
   <div class="card" style="margin-bottom:1rem;border-top-color:rgba(100,160,212,0.5);">
-    <div class="card-title" style="color:#6aaed4;">🧠 Export for Google NotebookLM</div>
-    <p style="font-size:0.88rem;color:#9a9080;margin-bottom:0.85rem;">Downloads your journal data as structured Markdown files (.md) ready to upload directly to <strong style="color:#d4cfc4;">NotebookLM</strong> as sources. Four focused documents so the AI can cross-reference them intelligently.</p>
+    <div class="card-title" style="color:#6aaed4;">🧠 Google NotebookLM</div>
+
+    <!-- Community NotebookLM link -->
+    <div style="margin-bottom:1rem;padding:0.75rem;background:#12121a;border:1px solid rgba(100,160,212,0.15);border-radius:3px;">
+      <label class="field-label" style="color:rgba(100,160,212,0.6);">Community NotebookLM URL</label>
+      <p style="font-size:0.78rem;color:#666;margin-bottom:0.5rem;">Once your public LoreRim 5 NotebookLM is live, paste the share link here. It will appear in the sidebar for all visitors to use.</p>
+      <div style="display:flex;gap:0.5rem;align-items:center;">
+        <input class="input" id="notebooklm-url-input" value="${esc(window.appState.siteConfig?.notebookLmUrl||'')}"
+          placeholder="https://notebooklm.google.com/notebook/…"
+          style="flex:1;font-size:0.85rem;">
+        <button class="btn btn-sm" onclick="saveNotebookLmUrl()" style="border-color:rgba(100,160,212,0.4);color:#6aaed4;white-space:nowrap;">Save Link</button>
+      </div>
+      ${window.appState.siteConfig?.notebookLmUrl
+        ? `<div style="margin-top:0.4rem;font-size:0.72rem;color:#5a9a5a;">✓ Link active — visible in sidebar</div>`
+        : `<div style="margin-top:0.4rem;font-size:0.72rem;color:#555;">No link set — sidebar link hidden until saved</div>`
+      }
+    </div>
+
+    <p style="font-size:0.88rem;color:#9a9080;margin-bottom:0.85rem;">Export your data as structured Markdown files (.md) ready to upload to NotebookLM as sources. Four focused personal exports plus a public mod reference guide.</p>
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:0.85rem;">
       <div style="background:#12121a;border:1px solid rgba(100,160,212,0.15);border-radius:3px;padding:0.65rem 0.85rem;">
@@ -49,8 +66,16 @@ function renderBackup() {
       </div>
     </div>
 
-    <button class="btn btn-primary" onclick="exportAllNotebook()" style="border-color:rgba(100,160,212,0.6);background:rgba(100,160,212,0.12);color:#6aaed4;">🧠 Export All 4 Files</button>
-    <div style="margin-top:0.6rem;font-size:0.75rem;color:#444;font-style:italic;">In NotebookLM: click + Add Source → Upload → select the .md files</div>
+    <div style="margin-top:0.6rem;padding:0.6rem;background:#12121a;border:1px solid rgba(100,160,212,0.1);border-radius:3px;">
+      <div style="font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.1em;color:rgba(100,160,212,0.7);text-transform:uppercase;margin-bottom:0.25rem;">🌐 Public Mod Guide</div>
+      <div style="font-size:0.78rem;color:#666;margin-bottom:0.5rem;">Full LoreRim 5 mod database formatted as a public reference — ideal as the core source for a shared community NotebookLM others can query.</div>
+      <button class="btn btn-sm" onclick="exportPublicModGuide()" style="border-color:rgba(100,160,212,0.4);color:#6aaed4;font-size:0.58rem;">Download Public Mod Guide .md</button>
+    </div>
+
+    <div style="display:flex;gap:0.5rem;margin-top:0.75rem;flex-wrap:wrap;">
+      <button class="btn btn-primary" onclick="exportAllNotebook()" style="border-color:rgba(100,160,212,0.6);background:rgba(100,160,212,0.12);color:#6aaed4;">🧠 Export All 4 Personal Files</button>
+    </div>
+    <div style="margin-top:0.5rem;font-size:0.75rem;color:#444;font-style:italic;">In NotebookLM: click + Add Source → Upload → select the .md files</div>
   </div>
 
   <!-- Download Backup -->
@@ -114,6 +139,16 @@ function importBackup(input) {
     }
   };
   reader.readAsText(file);
+}
+
+function saveNotebookLmUrl() {
+  const url = document.getElementById('notebooklm-url-input')?.value?.trim() || '';
+  if (!window.appState.siteConfig) window.appState.siteConfig = {};
+  window.appState.siteConfig.notebookLmUrl = url;
+  saveState();
+  updateSidebarLinks();
+  renderBackup();
+  showToast(url ? 'NotebookLM link saved — visible in sidebar.' : 'NotebookLM link cleared.');
 }
 
 function resetAllData() {

@@ -12,6 +12,9 @@ const DEFAULT_STATE = {
     backstory: '',
     portraitDataUrl: ''
   },
+  siteConfig: {
+    notebookLmUrl: '',   // Public NotebookLM share link — shown in sidebar when set
+  },
 
   journal: [],
   // each entry: { id, date, title, content, tags: [] }
