@@ -1,356 +1,2286 @@
 {
   "_meta": {
-    "version": "1.0",
-    "lastUpdated": "2026-05-31",
-    "totalMods": 0,
+    "version": "2.0",
+    "lastUpdated": "2026-06-01",
+    "totalMods": 284,
     "listName": "LoreRim 5",
     "listAuthor": "Biggie_Boss",
-    "notes": "Auto-populated descriptions for LoreRim 5 mods. Populated incrementally as modlist is processed."
+    "notes": "Descriptions for LoreRim 5 mods. Built from Ultra profile modlist."
   },
   "mods": {
     "Skyrim Script Extender (SKSE64)": {
-      "summary": "The Skyrim Script Extender (SKSE) is a tool used by many Skyrim mods to expand scripting capabilities and add new functionality to the game. Required by virtually every complex mod.",
+      "summary": "The Skyrim Script Extender expands scripting capabilities far beyond vanilla limits. Required by virtually every complex mod in LoreRim.",
       "category": "Framework",
       "author": "Ian Patterson, Stephen Abel, Paul Connelly",
       "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/30379",
       "nexusId": 30379,
       "tags": ["Core", "Framework", "Required"]
     },
-    "SkyUI": {
-      "summary": "A sleek and PC-friendly interface replacement for Skyrim's inventory, magic, and other menus. Also provides the Mod Configuration Menu (MCM) used by hundreds of mods. Essential for any modded playthrough.",
-      "category": "UI",
-      "author": "schlangster",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/12604",
-      "nexusId": 12604,
-      "tags": ["Core", "UI", "MCM", "Required"]
-    },
-    "Unofficial Skyrim Special Edition Patch": {
-      "summary": "A comprehensive bugfix mod for The Elder Scrolls V: Skyrim - Special Edition. Fixes hundreds of gameplay, quest, NPC, object, item, text, and placement bugs. Considered mandatory for any modded install.",
-      "category": "Patch",
-      "author": "Arthmoor",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/266",
-      "nexusId": 266,
-      "tags": ["Core", "Bugfix", "Required"]
-    },
-    "Requiem - The Roleplaying Overhaul": {
-      "summary": "Requiem is a project with the goal of turning Skyrim into a better roleplaying experience. It accomplishes this through complete deleveling of the world, stat-based character building, and punishing but fair combat. The backbone of LoreRim's gameplay. Enemy difficulty is tied to stats, not scaling — early game requires extreme caution.",
-      "category": "Overhaul",
-      "author": "Xarrian & Ogerboss",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/60888",
-      "nexusId": 60888,
-      "tags": ["Core", "Required", "Gameplay", "Combat", "Deleveled"]
-    },
-    "SSE Engine Fixes (skse64 plugin)": {
-      "summary": "A collection of engine bug fixes and performance improvements for Skyrim Special Edition. Fixes critical issues like the save corruption bug, tree LOD flickering, and various engine-level problems that Bethesda never patched.",
-      "category": "Framework",
-      "author": "aers, Nukem, Ryan",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/17230",
-      "nexusId": 17230,
-      "tags": ["Core", "Bugfix", "Performance", "Required"]
-    },
     "Address Library for SKSE Plugins": {
-      "summary": "A resource library providing version-independent address data for SKSE plugins. Required by most modern SKSE-based mods to ensure compatibility across game versions.",
+      "summary": "Version-independent address data used by almost every SKSE plugin. Required by the majority of modern SKSE-based mods.",
       "category": "Framework",
       "author": "meh321",
       "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/32444",
       "nexusId": 32444,
       "tags": ["Core", "Framework", "Required"]
     },
+    "SSE Engine Fixes (skse64 plugin)": {
+      "summary": "Fixes critical engine-level bugs including save corruption, tree LOD flickering, and dozens of other issues Bethesda never patched.",
+      "category": "Framework",
+      "author": "aers, Nukem, Ryan",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/17230",
+      "nexusId": 17230,
+      "tags": ["Core", "Bugfix", "Framework", "Required"]
+    },
+    "Unofficial Skyrim Special Edition Patch": {
+      "summary": "Fixes hundreds of gameplay, quest, NPC, object, and placement bugs. Considered mandatory for any modded install.",
+      "category": "Patch",
+      "author": "Arthmoor",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/266",
+      "nexusId": 266,
+      "tags": ["Core", "Bugfix", "Required"]
+    },
+    "powerofthree's Papyrus Extender": {
+      "summary": "Adds new Papyrus functions and events used by many modern mods. A scripting library required by a large portion of LoreRim's mod stack.",
+      "category": "Framework",
+      "author": "powerofthree",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/65188",
+      "nexusId": 65188,
+      "tags": ["Framework", "Scripting", "Required"]
+    },
+    "powerofthree's Tweaks": {
+      "summary": "A collection of engine-level tweaks and fixes including NPC AI improvements, spell absorb fixes, and dozens of quality-of-life corrections.",
+      "category": "Framework",
+      "author": "powerofthree",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/51073",
+      "nexusId": 51073,
+      "tags": ["Framework", "Bugfix", "Tweaks"]
+    },
+    "PapyrusUtil SE - Modders Scripting Utility Functions": {
+      "summary": "Adds additional Papyrus script functions used as a dependency by many mods. Required by numerous systems in LoreRim.",
+      "category": "Framework",
+      "author": "exiledviper, schlangster",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/13048",
+      "nexusId": 13048,
+      "tags": ["Framework", "Scripting"]
+    },
+    "Keyword Item Distributor (KID)": {
+      "summary": "Distributes keywords to items, armors, weapons and more via config files without needing a plugin. Powers many of LoreRim's distribution systems.",
+      "category": "Framework",
+      "author": "powerofthree",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/55728",
+      "nexusId": 55728,
+      "tags": ["Framework", "Distribution"]
+    },
+    "Spell Perk Item Distributor (SPID)": {
+      "summary": "Distributes spells, perks, items, shouts, and more to NPCs via INI files. Used throughout LoreRim to make NPCs use various abilities and equipment.",
+      "category": "Framework",
+      "author": "powerofthree",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/36869",
+      "nexusId": 36869,
+      "tags": ["Framework", "Distribution", "NPC"]
+    },
+    "JContainers SE": {
+      "summary": "Extends Papyrus with JSON-based data structures. Required by several complex mods that need persistent data storage.",
+      "category": "Framework",
+      "author": "silvericed, ryobg",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/16495",
+      "nexusId": 16495,
+      "tags": ["Framework", "Scripting"]
+    },
+    "MCM Helper": {
+      "summary": "Simplifies MCM creation and adds automatic settings saving/loading. Many of LoreRim's mods use MCM Helper for their configuration menus.",
+      "category": "Framework",
+      "author": "Parapets",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/53000",
+      "nexusId": 53000,
+      "tags": ["Framework", "UI", "MCM"]
+    },
+    "Base Object Swapper": {
+      "summary": "Swaps base game objects for alternate versions via config files. Enables massive visual diversity across Skyrim without plugin overhead.",
+      "category": "Framework",
+      "author": "powerofthree",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/60805",
+      "nexusId": 60805,
+      "tags": ["Framework", "Visuals", "Diversity"]
+    },
+    "FormList Manipulator - FLM": {
+      "summary": "Manipulates form lists via config files without needing patches. Used by LoreRim to extend leveled lists and form collections cleanly.",
+      "category": "Framework",
+      "author": "Parapets",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/74037",
+      "nexusId": 74037,
+      "tags": ["Framework", "Distribution"]
+    },
+    "AnimObject Swapper": {
+      "summary": "Swaps animation objects in the world via config files. Used to diversify objects like grindstones, tanning racks, and weapons sharpened on them.",
+      "category": "Framework",
+      "author": "powerofthree",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/79005",
+      "nexusId": 79005,
+      "tags": ["Framework", "Animation", "Visuals"]
+    },
+    "Sound Record Distributor": {
+      "summary": "Distributes sound records to existing sounds without a plugin. Used to layer additional ambient audio throughout Skyrim.",
+      "category": "Framework",
+      "author": "powerofthree",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/77945",
+      "nexusId": 77945,
+      "tags": ["Framework", "Audio"]
+    },
+    "Behavior Data Injector": {
+      "summary": "Injects behavior data into existing behavior files, allowing multiple animation mods to add their own data without conflicts.",
+      "category": "Framework",
+      "author": "Inpa Skyrim",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/78146",
+      "nexusId": 78146,
+      "tags": ["Framework", "Animation"]
+    },
+    "Project New Reign - Nemesis Unlimited Behavior Engine": {
+      "summary": "Behavior framework that allows multiple animation mods to work together. LoreRim's replacement for FNIS — required for the entire combat animation stack.",
+      "category": "Framework",
+      "author": "ShoryukenToTheChin, ShikyoKira",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/60033",
+      "nexusId": 60033,
+      "tags": ["Framework", "Animation", "Required"]
+    },
+    "XP32 Maximum Skeleton Special Extended": {
+      "summary": "Extended skeleton with additional bone nodes for weapons, shields, and combat styles. The foundation for LoreRim's entire animation and equipment display system.",
+      "category": "Framework",
+      "author": "Groovtama",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/1988",
+      "nexusId": 1988,
+      "tags": ["Framework", "Animation", "Required"]
+    },
+    "Open Animation Replacer": {
+      "summary": "Replaces animations conditionally based on in-game state — equipment, health, location, etc. Powers nearly all of LoreRim's context-aware animations.",
+      "category": "Framework",
+      "author": "Ersh",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/92109",
+      "nexusId": 92109,
+      "tags": ["Framework", "Animation", "Required"]
+    },
+    "Precision": {
+      "summary": "Gives melee weapons physically accurate hitboxes based on animation. Attacks only connect when the weapon is actually near the target — essential for MCO's combo system.",
+      "category": "Framework",
+      "author": "Ersh",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/72347",
+      "nexusId": 72347,
+      "tags": ["Combat", "Animation", "Framework"]
+    },
+    "SSE Display Tweaks": {
+      "summary": "Unlocks framerate, adds borderless fullscreen, and provides many display-related improvements for Skyrim SE.",
+      "category": "Framework",
+      "author": "aers",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/34705",
+      "nexusId": 34705,
+      "tags": ["Framework", "Performance", "Display"]
+    },
+    "Bug Fixes SSE": {
+      "summary": "Fixes a collection of bugs including the magic effect bug, enchanted armor bug, and various script issues not covered by USSEP.",
+      "category": "Framework",
+      "author": "meh321",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/33261",
+      "nexusId": 33261,
+      "tags": ["Framework", "Bugfix"]
+    },
+    "Scrambled Bugs": {
+      "summary": "Fixes a large number of engine bugs through SKSE — including experience gain issues, perk point bugs, and combat formula errors.",
+      "category": "Framework",
+      "author": "meh321",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/43532",
+      "nexusId": 43532,
+      "tags": ["Framework", "Bugfix"]
+    },
+    "Container Distribution Framework": {
+      "summary": "Distributes items into containers via config files without patches. Used to populate loot in LoreRim.",
+      "category": "Framework",
+      "author": "Parapets",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/74488",
+      "nexusId": 74488,
+      "tags": ["Framework", "Distribution", "Loot"]
+    },
+    "RaceMenu": {
+      "summary": "Comprehensive character creation overhaul. Adds sliders, overlays, sculpting tools, and saves character presets. Essential for LoreRim's appearance customization.",
+      "category": "UI",
+      "author": "expired6978",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/19080",
+      "nexusId": 19080,
+      "tags": ["Character", "UI", "Appearance"]
+    },
+    "SkyUI": {
+      "summary": "Replaces Skyrim's menus with a PC-friendly interface and provides the Mod Configuration Menu (MCM) system. Required by most mods with settings.",
+      "category": "UI",
+      "author": "schlangster",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/12604",
+      "nexusId": 12604,
+      "tags": ["Core", "UI", "MCM", "Required"]
+    },
+    "Navigator - Navmesh Fixes": {
+      "summary": "Fixes navmesh issues throughout Skyrim that cause NPCs to get stuck, take wrong paths, or fail to navigate correctly.",
+      "category": "Patch",
+      "author": "Rasikko",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/52641",
+      "nexusId": 52641,
+      "tags": ["Bugfix", "NPC", "Navigation"]
+    },
+    "Requiem - The Roleplaying Overhaul": {
+      "summary": "Completely delevels Skyrim's world — enemies have fixed stats, not scaled ones. Character building is stat-based and permanent. Early game is brutally dangerous; power comes from meaningful progression. The backbone of all LoreRim gameplay. Plan your build carefully before investing perk points.",
+      "category": "Overhaul",
+      "author": "Xarrian & Ogerboss",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/60888",
+      "nexusId": 60888,
+      "tags": ["Core", "Required", "Gameplay", "Combat", "Deleveled", "Requiem"]
+    },
+    "Requiem - Magic Redone": {
+      "summary": "Massively expands Requiem's magic system with hundreds of new spells organized by tier and school. Adds new perk branches and reworks Illusion to be more natural. Most magic build archetypes in LoreRim depend on this mod's spell options.",
+      "category": "Overhaul",
+      "author": "Styyx",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/59302",
+      "nexusId": 59302,
+      "tags": ["Requiem", "Magic", "Spells", "Overhaul"]
+    },
+    "Requiem - Weapons and Armor Redone": {
+      "summary": "Overhauls Requiem's weapon and armor balance. Adjusts stat distribution, material tiers, and crafting requirements for a more coherent progression system.",
+      "category": "Overhaul",
+      "author": "Styyx",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/74937",
+      "nexusId": 74937,
+      "tags": ["Requiem", "Weapons", "Armor", "Balance"]
+    },
+    "Requiem - Alchemy Redone": {
+      "summary": "Overhauls Requiem's alchemy system with rebalanced ingredient effects, revised potion durations, and new crafting requirements.",
+      "category": "Overhaul",
+      "author": "Styyx",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/77963",
+      "nexusId": 77963,
+      "tags": ["Requiem", "Alchemy", "Balance"]
+    },
+    "Requiem - Races Redone": {
+      "summary": "Replaces Requiem's racial stat bonuses with a more balanced and differentiated set of racial abilities, making race choice more impactful.",
+      "category": "Overhaul",
+      "author": "Styyx",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/63319",
+      "nexusId": 63319,
+      "tags": ["Requiem", "Races", "Balance"]
+    },
+    "Requiem - Birthsigns Redone": {
+      "summary": "Reworks Requiem's Standing Stone (birthsign) effects for more interesting and differentiated choices. Your Standing Stone is a permanent character decision.",
+      "category": "Overhaul",
+      "author": "Styyx",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/73466",
+      "nexusId": 73466,
+      "tags": ["Requiem", "Birthsign", "Balance"]
+    },
+    "Requiem - Stealth Redone": {
+      "summary": "Overhauls Requiem's stealth system with improved detection formulas and more consistent stealth gameplay for thief and assassin builds.",
+      "category": "Overhaul",
+      "author": "Styyx",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/74918",
+      "nexusId": 74918,
+      "tags": ["Requiem", "Stealth", "Balance"]
+    },
+    "Requiem - Special Feats": {
+      "summary": "Adds special feats — powerful one-time choices tied to skill progression that define your character's identity at key milestones.",
+      "category": "Gameplay",
+      "author": "Styyx",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/66947",
+      "nexusId": 66947,
+      "tags": ["Requiem", "Perks", "Character Building"]
+    },
+    "Requiem - Minor Arcana": {
+      "summary": "Adds minor magical abilities and small passive bonuses tied to skill thresholds, giving mage builds more mid-tier rewards.",
+      "category": "Gameplay",
+      "author": "Styyx",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/69349",
+      "nexusId": 69349,
+      "tags": ["Requiem", "Magic", "Character Building"]
+    },
+    "Requiem Patch Central": {
+      "summary": "Central hub for Requiem compatibility patches with dozens of mods. Ensures balanced stat values and proper integration between Requiem and the rest of LoreRim.",
+      "category": "Patch",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/63600",
+      "nexusId": 63600,
+      "tags": ["Requiem", "Patch", "Compatibility"]
+    },
+    "Requiem - Toggle Enchantment": {
+      "summary": "Allows toggling weapon enchantments on/off to save charges. Useful for enchanted weapons in Requiem where charges are a significant resource.",
+      "category": "Gameplay",
+      "author": "Styyx",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/65793",
+      "nexusId": 65793,
+      "tags": ["Requiem", "Enchanting", "Quality of Life"]
+    },
+    "Requiem - Lockpicking Rework": {
+      "summary": "Overhauls Requiem's lockpicking system with new mechanics tied to the lockpicking skill. Lock difficulty is more meaningful at each tier.",
+      "category": "Gameplay",
+      "author": "Styyx",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/73906",
+      "nexusId": 73906,
+      "tags": ["Requiem", "Lockpicking", "Stealth"]
+    },
+    "Requiem - Pickpocket Rework": {
+      "summary": "Reworks Requiem's pickpocket skill and detection formulas for more consistent and fair thief gameplay.",
+      "category": "Gameplay",
+      "author": "Styyx",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/73906",
+      "nexusId": 73906,
+      "tags": ["Requiem", "Stealth", "Thief"]
+    },
+    "Requiem - Customizable Spells Per Perk": {
+      "summary": "Allows configuring how many spells each Requiem perk unlocks, letting you tune spell acquisition pace to your preference.",
+      "category": "Gameplay",
+      "author": "Styyx",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/71753",
+      "nexusId": 71753,
+      "tags": ["Requiem", "Magic", "Configuration"]
+    },
+    "Requiem - Improved Spell Learning": {
+      "summary": "Improves how spell tomes interact with Requiem's perk requirements, making spell learning feel more logical and rewarding.",
+      "category": "Gameplay",
+      "author": "Styyx",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/71905",
+      "nexusId": 71905,
+      "tags": ["Requiem", "Magic", "Spells"]
+    },
+    "Requiem - Dragonborn Patch": {
+      "summary": "Official patch applying Requiem's deleveling and balance to the Dragonborn DLC. Adjusts all Solstheim enemies, gear, and quests.",
+      "category": "Patch",
+      "author": "Ogerboss",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/60888",
+      "nexusId": 60888,
+      "tags": ["Requiem", "Patch", "Dragonborn DLC"]
+    },
+    "Requiem - Vendor tweaks": {
+      "summary": "Adjusts merchant inventories and gold in Requiem to better reflect the economy — vendors have more appropriate stock and currency for each tier of play.",
+      "category": "Gameplay",
+      "author": "Styyx",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/74937",
+      "nexusId": 74937,
+      "tags": ["Requiem", "Economy", "Vendors"]
+    },
+    "Requiem - Exhaustion and Stamina Fix": {
+      "summary": "Fixes stamina regeneration and exhaustion behavior in Requiem so stamina-dependent builds feel fair and consistent.",
+      "category": "Patch",
+      "author": "Styyx",
+      "tags": ["Requiem", "Bugfix", "Stamina"]
+    },
+    "Requiem for the Indifferent Update": {
+      "summary": "Maintenance update and bugfix collection for Requiem, addressing script errors and edge cases in the base mod.",
+      "category": "Patch",
+      "author": "Styyx",
+      "tags": ["Requiem", "Bugfix", "Patch"]
+    },
+    "Requiem - Lockpicking SKSE": {
+      "summary": "SKSE-based lockpicking skill integration for Requiem, replacing Papyrus-based detection with faster and more reliable SKSE hooks.",
+      "category": "Patch",
+      "author": "Styyx",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/77398",
+      "nexusId": 77398,
+      "tags": ["Requiem", "Lockpicking", "SKSE"]
+    },
+    "Ordinator - Perks of Skyrim": {
+      "summary": "Overhauls all perk trees with 400+ new perks, enabling deep and specialized character builds. Every perk choice is permanent in Requiem — plan your build on paper first. Heavily patched into LoreRim's Requiem framework.",
+      "category": "Overhaul",
+      "author": "EnaiSiaion",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/1137",
+      "nexusId": 1137,
+      "tags": ["EnaiRim", "Perks", "Character Building", "Core Gameplay"]
+    },
     "Wintersun - Faiths of Skyrim": {
-      "summary": "Adds religion and worship mechanics to Skyrim. Pray at shrines to gain deity favor, then unlock powerful blessings and abilities. Features 70+ deities with unique mechanics, taboos, and passive bonuses. LoreRim integrates this deeply — your chosen deity should fit your character concept. Neglecting worship reduces favor over time.",
+      "summary": "Adds religion and worship to Skyrim. Pray at shrines to gain deity favor, unlocking powerful blessings and abilities from 70+ deities. Your chosen deity shapes your build — neglecting worship reduces favor over time. Check deity requirements before choosing.",
       "category": "Gameplay",
       "author": "EnaiSiaion",
       "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/22506",
       "nexusId": 22506,
-      "tags": ["EnaiRim", "Religion", "Roleplay", "Immersion"]
+      "tags": ["EnaiRim", "Religion", "Roleplay", "Character Building"]
     },
-    "Ordinator - Perks of Skyrim": {
-      "summary": "Overhauls the perk trees to add 400+ new perks, transforming each skill into a deep and rewarding progression system. Pairs with Requiem for highly specialized, build-defining character development. Every perk choice matters — respeccing is not possible in Requiem.",
+    "Sacrilege - Minimalistic Vampires of Skyrim": {
+      "summary": "A clean, high-depth vampirism overhaul. Adds scaling hemomancy spells, improved vampire powers (at-will instead of 1/day), and a progression system tied to feeding. Used instead of Sacrosanct in LoreRim.",
+      "category": "Gameplay",
+      "author": "meh321",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/42408",
+      "nexusId": 42408,
+      "tags": ["EnaiRim", "Vampire", "Dawnguard", "Character Building"]
+    },
+    "Growl - Werebeasts of Skyrim": {
+      "summary": "Overhauls werewolf and werebear gameplay with a perk tree, new abilities, and a progression system. The Companions questline path — a viable alternative to vampirism for beast-focused builds.",
       "category": "Gameplay",
       "author": "EnaiSiaion",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/1137",
-      "nexusId": 1137,
-      "tags": ["EnaiRim", "Perks", "Core Gameplay"]
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/31245",
+      "nexusId": 31245,
+      "tags": ["EnaiRim", "Werewolf", "Companions", "Character Building"]
     },
     "Apocalypse - Magic of Skyrim": {
-      "summary": "Adds 155 new spells to Skyrim that are unique, balanced, and lore-friendly. Covers all schools of magic with creative new options. Essential for mage builds — many LoreRim magic builds rely on Apocalypse spells for their core combat rotation.",
+      "summary": "Adds 155 unique, lore-friendly spells across all schools. Many LoreRim magic builds rely on Apocalypse spells for their core combat rotation. Patched into Magic Redone.",
       "category": "Gameplay",
       "author": "EnaiSiaion",
       "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/1090",
       "nexusId": 1090,
       "tags": ["EnaiRim", "Magic", "Spells"]
     },
-    "Imperious - Races of Skyrim": {
-      "summary": "Overhauls the ten playable races with unique abilities, passives, and a special power that requires completing a short quest. Makes race choice a meaningful roleplaying and mechanical decision in LoreRim's Requiem framework.",
-      "category": "Gameplay",
-      "author": "EnaiSiaion",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/1315",
-      "nexusId": 1315,
-      "tags": ["EnaiRim", "Races"]
-    },
-    "Andromeda - Standing Stones of Skyrim": {
-      "summary": "Replaces the 13 Standing Stone effects with new abilities that unlock over time as you use them, making stone choice a meaningful part of character identity. In LoreRim, your Standing Stone (birthsign) is a permanent choice — choose wisely at character creation.",
-      "category": "Gameplay",
-      "author": "EnaiSiaion",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/14986",
-      "nexusId": 14986,
-      "tags": ["EnaiRim", "Birthsign", "Standing Stones"]
-    },
-    "Sacrosanct - Vampires of Skyrim": {
-      "summary": "A complete overhaul of Skyrim's vampire gameplay, adding a progression system with powers that grow as you feed. Synergizes with Dawnguard questline. Vampirism is a major build commitment in LoreRim — research the mechanics before starting Dawnguard.",
-      "category": "Gameplay",
-      "author": "EnaiSiaion",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/3928",
-      "nexusId": 3928,
-      "tags": ["EnaiRim", "Vampire", "Dawnguard"]
-    },
-    "Growl - Werebeasts of Skyrim": {
-      "summary": "Overhauls werewolf and werebear gameplay with new abilities, a perk tree, and progression system. Companions questline leads to lycanthropy — Growl makes it a meaningful alternative to Sacrosanct vampirism.",
-      "category": "Gameplay",
-      "author": "EnaiSiaion",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/31245",
-      "nexusId": 31245,
-      "tags": ["EnaiRim", "Werewolf", "Companions"]
-    },
-    "Summermyst - Enchantments of Skyrim": {
-      "summary": "Adds 120 new enchantments for weapons and armor, greatly expanding gear customization. Essential for enchanting-focused builds or min-maxing endgame gear in LoreRim.",
-      "category": "Gameplay",
-      "author": "EnaiSiaion",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/6285",
-      "nexusId": 6285,
-      "tags": ["EnaiRim", "Enchanting", "Gear"]
-    },
-    "Odin - Skyrim Magic Overhaul": {
-      "summary": "Overhauls and expands vanilla spells, adding new spells and improving existing ones for a more cohesive magic system. Complements Apocalypse by improving the quality of base-game spells.",
-      "category": "Gameplay",
-      "author": "EnaiSiaion",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/46000",
-      "nexusId": 46000,
-      "tags": ["EnaiRim", "Magic", "Spells"]
-    },
-    "Vokrii - Minimalistic Perks of Skyrim": {
-      "summary": "A lightweight perk overhaul that adds interesting build options without overwhelming complexity. Used in some LoreRim configurations instead of or alongside Ordinator.",
-      "category": "Gameplay",
-      "author": "EnaiSiaion",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/26176",
-      "nexusId": 26176,
-      "tags": ["EnaiRim", "Perks"]
-    },
     "Triumvirate - Mage Archetypes": {
-      "summary": "Adds 65 new spells representing five mage archetypes: Druid, Cleric, Shaman, Warlock, and Sorcerer. Tailored for roleplaying specific magical disciplines.",
+      "summary": "Adds 65 spells representing five archetypes: Druid, Cleric, Shaman, Warlock, Sorcerer. Tailored for thematic magic builds — pick an archetype and build around it.",
       "category": "Gameplay",
       "author": "EnaiSiaion",
       "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/39170",
       "nexusId": 39170,
       "tags": ["EnaiRim", "Magic", "Spells", "Roleplay"]
     },
-    "Nemesis Unlimited Behavior Engine": {
-      "summary": "A behavior framework that allows multiple animation mods to work together. Replaces FNIS for LoreRim's animation stack. Required for most combat animation mods. Runs during the setup process — do not skip.",
-      "category": "Framework",
-      "author": "Shout-Out and ShikyoKira",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/60033",
-      "nexusId": 60033,
-      "tags": ["Animation", "Framework", "Required"]
-    },
-    "XP32 Maximum Skeleton Special Extended - XPMSSE": {
-      "summary": "An extended skeleton with support for combat styles and additional bone nodes. Required by almost all weapon and animation mods. The foundation for LoreRim's combat animation system.",
-      "category": "Framework",
-      "author": "Groovtama",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/1988",
-      "nexusId": 1988,
-      "tags": ["Animation", "Framework", "Required"]
-    },
     "True Directional Movement - Modernized Third Person Gameplay": {
-      "summary": "Overhauls third-person movement with target lock, strafing, and directional movement. Makes Skyrim feel like a modern action RPG. Core to LoreRim's combat feel — the target lock system is essential for boss fights.",
+      "summary": "Overhauls third-person movement with a target lock system, strafing, and directional movement that make Skyrim feel like a modern action RPG. The target lock (default: Middle Mouse) is essential for boss fights. Core to LoreRim's feel.",
       "category": "Gameplay",
       "author": "mrowrpurr",
       "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/51614",
       "nexusId": 51614,
-      "tags": ["Combat", "Movement", "Third Person"]
+      "tags": ["Combat", "Movement", "Third Person", "Core Gameplay"]
     },
-    "The Ultimate Dodge Mod": {
-      "summary": "Adds a dedicated dodge mechanic to Skyrim using a configurable hotkey. Essential for LoreRim's combat — Requiem's punishing damage makes positioning and dodging critical to survival.",
-      "category": "Combat",
-      "author": "ShoryukenToTheChin",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/21775",
-      "nexusId": 21775,
-      "tags": ["Combat", "Dodge", "Key: Alt (default)"]
-    },
-    "Immersive Armors": {
-      "summary": "Adds 55 new sets of armor to the world of Skyrim in a lore-friendly way. Distributed through crafting, leveled lists, and unique named characters. Greatly expands mid-game gear options.",
-      "category": "Gear",
-      "author": "hothtrooper44",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/3479",
-      "nexusId": 3479,
-      "tags": ["Armor", "Gear", "Lore-Friendly"]
-    },
-    "Immersive Weapons": {
-      "summary": "Adds 230 new weapons to the world of Skyrim in a lore-friendly way. Distributed through leveled lists and unique characters. Expands weapon variety significantly for all combat styles.",
-      "category": "Gear",
-      "author": "hothtrooper44",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/16788",
-      "nexusId": 16788,
-      "tags": ["Weapons", "Gear", "Lore-Friendly"]
-    },
-    "Skyrim Flora Overhaul SE": {
-      "summary": "A comprehensive visual overhaul of Skyrim's plant life, trees, and ground cover. Significantly improves the visual quality of nature environments.",
-      "category": "Visuals",
-      "author": "vurt",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/2154",
-      "nexusId": 2154,
-      "tags": ["Visuals", "Nature", "Trees"]
-    },
-    "Static Mesh Improvement Mod - SMIM": {
-      "summary": "Greatly improves a large number of 3D models for things like fences, chains, ropes, candles, cauldrons, and more. One of the most widespread visual improvement mods, touching thousands of objects.",
-      "category": "Visuals",
-      "author": "Brumbek",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/659",
-      "nexusId": 659,
-      "tags": ["Visuals", "Meshes", "Objects"]
-    },
-    "Realistic Water Two SE": {
-      "summary": "Adds better water flow, splashing, and faster water movement. Customizes water in each region of Skyrim for a more realistic and visually varied experience.",
-      "category": "Visuals",
-      "author": "isoku",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/2182",
-      "nexusId": 2182,
-      "tags": ["Visuals", "Water", "Immersion"]
-    },
-    "Immersive Citizens - AI Overhaul": {
-      "summary": "Improves the AI of friendly NPCs to make them more immersive and lifelike. NPCs will seek shelter during storms, sleep, eat, and react more naturally to combat. Significant impact on town atmosphere.",
-      "category": "Immersion",
-      "author": "Arnaud dOrchymont",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/173",
-      "nexusId": 173,
-      "tags": ["NPC", "AI", "Immersion"]
-    },
-    "Relationship Dialogue Overhaul - RDO": {
-      "summary": "Adds over 5000 lines of new dialogue for NPCs based on their relationship to the player and their factions. Makes companions and allies feel more responsive and personal.",
-      "category": "Immersion",
-      "author": "cloudedtruth",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/1187",
-      "nexusId": 1187,
-      "tags": ["Dialogue", "NPC", "Companions", "Roleplay"]
-    },
-    "Interesting NPCs SE (3DNPC)": {
-      "summary": "Adds over 250 fully voiced NPCs with complex schedules, extensive dialogue, and new quests. Several become followers with unique personalities. One of the most expansive NPC mods ever made.",
-      "category": "Quest",
-      "author": "Kris Takahashi",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/29194",
-      "nexusId": 29194,
-      "tags": ["NPC", "Quests", "Followers", "Dialogue"]
-    },
-    "Alternate Start - Live Another Life": {
-      "summary": "Provides an alternative means to start the game for those who do not wish to go through the lengthy intro sequence. Choose a background and starting location. In LoreRim's Requiem, your starting location critically affects early-game difficulty.",
+    "SCAR 2 - Skyrim Combos AI Revolution": {
+      "summary": "Makes NPCs use combo attacks intelligently — they check distance, angle, and conditions before each strike, then pick animations accordingly. NPCs fight like Dark Souls bosses. Required for LoreRim's combat to feel challenging and fair.",
       "category": "Gameplay",
-      "author": "Arthmoor",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/272",
-      "nexusId": 272,
-      "tags": ["Start", "Roleplay", "Requiem"]
+      "author": "maxsu2017",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/72014",
+      "nexusId": 72014,
+      "tags": ["Combat", "AI", "Animation", "Core Combat"]
     },
-    "NORDIC UI - Interface Overhaul": {
-      "summary": "A comprehensive UI overhaul replacing Skyrim's menus, HUD, and interface elements with a clean, modern Nordic-inspired design. Pairs with SkyUI for a cohesive visual experience.",
+    "Combat Pathing Revolution": {
+      "summary": "Improves NPC combat movement and pathing so enemies reposition dynamically instead of standing still while attacking. Works with SCAR for intelligent combo + movement.",
+      "category": "Gameplay",
+      "author": "Maxsu",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/79650",
+      "nexusId": 79650,
+      "tags": ["Combat", "AI", "Movement"]
+    },
+    "For Honor in Skyrim": {
+      "summary": "Adds a complete moveset framework inspired by the game For Honor, including guard stances, directional attacks, and parry mechanics. LoreRim includes a balance patch to integrate it with Requiem. Transforms melee combat into a skill-based system.",
+      "category": "Gameplay",
+      "author": "Dservant",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/151478",
+      "nexusId": 151478,
+      "tags": ["Combat", "Animation", "MCO", "Stance"]
+    },
+    "Attack MCO Maxsu Edition": {
+      "summary": "Modern Combat Overhaul (MCO) by Maxsu — replaces vanilla power attacks with directional, chained combo attacks. The backbone of LoreRim's melee combat animation system. Works with SCAR and Precision.",
+      "category": "Gameplay",
+      "author": "maxsu2017, Distar",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/45448",
+      "nexusId": 45448,
+      "tags": ["Combat", "Animation", "MCO", "Core Combat"]
+    },
+    "TK Dodge RE": {
+      "summary": "Adds a dedicated directional dodge mechanic with i-frames. Default key is Alt. Positioning and timing are critical in Requiem's punishing combat — dodge well or die.",
+      "category": "Gameplay",
+      "author": "Ershin, tktk1",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/56956",
+      "nexusId": 56956,
+      "tags": ["Combat", "Dodge", "Movement"]
+    },
+    "Block Commitment Overhaul SKSE": {
+      "summary": "Adds a configurable cost to canceling blocks and implements mage blocking with wards. Makes blocking a real commitment rather than a risk-free buffer.",
+      "category": "Gameplay",
+      "author": "Ersh",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/171898",
+      "nexusId": 171898,
+      "tags": ["Combat", "Block", "SKSE"]
+    },
+    "MaxsuBlockOverhaul": {
+      "summary": "Reworks the blocking system to be more responsive and consistent. Timing and positioning matter more for effective blocking.",
+      "category": "Gameplay",
+      "author": "maxsu2017",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/65720",
+      "nexusId": 65720,
+      "tags": ["Combat", "Block"]
+    },
+    "Chocolate Poise": {
+      "summary": "Adds a poise system inspired by Elden Ring. Accumulate enough hits and an actor staggers. Prevents stagger-lock through a recovery window between staggers.",
+      "category": "Gameplay",
+      "author": "doodlezoid",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/70478",
+      "nexusId": 70478,
+      "tags": ["Combat", "Poise", "Stagger"]
+    },
+    "Chocolate Poise Plus - Addons and Rebalancing": {
+      "summary": "Expands Chocolate Poise with INI tweaks, perk support, and rebalanced stagger types. Makes poise values consistent across all armor and weapon types.",
+      "category": "Gameplay",
+      "author": "doodlezoid",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/82091",
+      "nexusId": 82091,
+      "tags": ["Combat", "Poise", "Stagger"]
+    },
+    "VioLens - A Killmove Mod SE": {
+      "summary": "Adds configurable kill moves and kill cams for both melee and ranged combat. Controls probability, camera behavior, and player/NPC killmove settings.",
+      "category": "Gameplay",
+      "author": "Reko",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/15947",
+      "nexusId": 15947,
+      "tags": ["Combat", "Killmoves", "Visual"]
+    },
+    "Dismembering Framework": {
+      "summary": "Enables real-time dismemberment of NPCs and creatures — limbs and heads can be severed in combat. Adds blood splatters and adaptive sound effects. Extensive MCM controls.",
+      "category": "Gameplay",
+      "author": "Inpa Skyrim",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/126203",
+      "nexusId": 126203,
+      "tags": ["Combat", "Gore", "Visual"]
+    },
+    "Precision - Enchanted Weapon Trails": {
+      "summary": "Adds enchantment visual trails to weapons based on their enchantment type, using Precision's hitbox data. Visual enhancement for enchanted melee weapons.",
+      "category": "Visuals",
+      "author": "Ersh",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/72351",
+      "nexusId": 72351,
+      "tags": ["Visual", "Combat", "Enchanting"]
+    },
+    "One Click Power Attack NG": {
+      "summary": "Separates power attack input from hold-to-attack so you can bind power attacks to a dedicated key. Required for MCO's combo system to work correctly.",
+      "category": "Gameplay",
+      "author": "dTry",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/68718",
+      "nexusId": 68718,
+      "tags": ["Combat", "MCO", "Keybind"]
+    },
+    "Bow Rapid Combo V3": {
+      "summary": "Adds combo attack animations for bows — rapid shooting, charging shots, and evasion moves. Transforms archery into an active combat style.",
+      "category": "Gameplay",
+      "author": "Smooth",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/89841",
+      "nexusId": 89841,
+      "tags": ["Combat", "Archery", "Animation"]
+    },
+    "Bow Charge Plus": {
+      "summary": "Adds more control to bow charging — holding longer increases damage. Adds meaningful skill expression to archery timing.",
+      "category": "Gameplay",
+      "author": "Ersh",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/59357",
+      "nexusId": 59357,
+      "tags": ["Combat", "Archery"]
+    },
+    "Dynamic Dodge Shot": {
+      "summary": "Adds shooting animations while dodging for a more fluid archery combat style.",
+      "category": "Gameplay",
+      "author": "Smooth",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/79891",
+      "nexusId": 79891,
+      "tags": ["Combat", "Archery", "Animation"]
+    },
+    "Swift Potion NG": {
+      "summary": "Allows drinking potions without interrupting attacks. Configurable delay and animation. Quality of life for combat when managing health in Requiem's brutal encounters.",
+      "category": "Gameplay",
+      "author": "Nightfallstorm",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/78032",
+      "nexusId": 78032,
+      "tags": ["Combat", "Potions", "Quality of Life"]
+    },
+    "Ultimate Animated Potions NG": {
+      "summary": "Adds drinking animations when consuming potions. Immersive but adds a brief animation delay — plan your potion use in combat.",
+      "category": "Gameplay",
+      "author": "kur0ne",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/52986",
+      "nexusId": 52986,
+      "tags": ["Animation", "Potions", "Immersion"]
+    },
+    "Dual Wielding Unlocker": {
+      "summary": "Allows dual wield attacks to be fully animated and functional with both hands independently. Required for proper dual-wield MCO animations.",
+      "category": "Gameplay",
+      "author": "dTry",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/54014",
+      "nexusId": 54014,
+      "tags": ["Combat", "Dual Wield", "Animation"]
+    },
+    "Parrying RPG": {
+      "summary": "Adds a timed parry system — perfectly timing a block just before an attack results in a powerful riposte. Adds high skill ceiling to blocking.",
+      "category": "Gameplay",
+      "author": "Ersh",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/81044",
+      "nexusId": 81044,
+      "tags": ["Combat", "Block", "Parry"]
+    },
+    "Modern Stagger Lock": {
+      "summary": "Prevents enemies from being permanently stagger-locked by adding a brief immunity window between staggers. Makes combat feel fair for both player and enemies.",
+      "category": "Gameplay",
+      "author": "Ersh",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/81011",
+      "nexusId": 81011,
+      "tags": ["Combat", "Stagger", "Balance"]
+    },
+    "Stop On Slash AE - Hitstop and Screenshake": {
+      "summary": "Adds hitstop and screen shake on successful hits, giving melee combat more weight and impact.",
+      "category": "Gameplay",
+      "author": "Ersh",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/73420",
+      "nexusId": 73420,
+      "tags": ["Combat", "Visual", "Feel"]
+    },
+    "Next-Gen Decapitations": {
+      "summary": "Improves decapitation visuals and adds new decapitation kill animations for various weapon types.",
+      "category": "Gameplay",
+      "author": "Ersh",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/76729",
+      "nexusId": 76729,
+      "tags": ["Combat", "Killmove", "Animation"]
+    },
+    "Immersive Equipment Displays": {
+      "summary": "Allows full customization of how weapons, shields, and equipment are displayed on your character's body. Weapons shown on back, hip, or custom positions. Includes NPC presets.",
+      "category": "Visuals",
+      "author": "SlavicPotato",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/62001",
+      "nexusId": 62001,
+      "tags": ["Visual", "Equipment", "Character"]
+    },
+    "Simple Dual Sheath": {
+      "summary": "Adds a second sheathed weapon to your character's body, showing both equipped weapons simultaneously. Clean and lightweight implementation.",
+      "category": "Visuals",
+      "author": "SlavicPotato",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/50049",
+      "nexusId": 50049,
+      "tags": ["Visual", "Equipment", "Character"]
+    },
+    "Smooth Moveset": {
+      "summary": "Comprehensive moveset overhaul for unarmed, one-handed, two-handed, and spellcasting. Provides fluid, modern animation transitions for all combat situations.",
+      "category": "Gameplay",
+      "author": "Smooth",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/80175",
+      "nexusId": 80175,
+      "tags": ["Combat", "Animation", "Moveset"]
+    },
+    "Vanargand Animations": {
+      "summary": "High-quality animation overhaul for sneak, dual wield, crossbows, and movement. Part of the animation suite that gives LoreRim's stealth and archer builds their signature feel.",
+      "category": "Gameplay",
+      "author": "Movement",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/34581",
+      "nexusId": 34581,
+      "tags": ["Animation", "Stealth", "Archery", "Movement"]
+    },
+    "Goetia Animations": {
+      "summary": "Premium animation overhaul for magic casting, shouts, and sneak magic. Gives mage and hybrid builds expressive, cinematic spell animations.",
+      "category": "Gameplay",
+      "author": "Smooth",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/67671",
+      "nexusId": 67671,
+      "tags": ["Animation", "Magic", "Casting"]
+    },
+    "Conditional Armor Type Animations": {
+      "summary": "Plays different locomotion animations based on equipped armor type — light, heavy, or robes. Each armor type has distinct movement personality.",
+      "category": "Gameplay",
+      "author": "Eskyrim",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/51507",
+      "nexusId": 51507,
+      "tags": ["Animation", "Movement", "Armor"]
+    },
+    "Dynamic Animation Casting - NG": {
+      "summary": "Allows casting spells while performing other animations — running, attacking, jumping. Makes magic feel proactive rather than stand-still.",
+      "category": "Gameplay",
+      "author": "Ersh",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/55761",
+      "nexusId": 55761,
+      "tags": ["Animation", "Magic", "Combat"]
+    },
+    "EVG Animated Traversal": {
+      "summary": "Adds context-sensitive traversal animations — climbing ledges, vaulting over fences, squeezing through gaps. Makes movement through the environment more immersive.",
+      "category": "Gameplay",
+      "author": "DServant",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/68623",
+      "nexusId": 68623,
+      "tags": ["Animation", "Movement", "Traversal", "Immersion"]
+    },
+    "SkyParkour v3 - Procedural Parkour Framework": {
+      "summary": "Adds parkour mechanics — vaulting, wall runs, and dynamic obstacle navigation. Makes traversal through Skyrim's environments more fluid and engaging.",
+      "category": "Gameplay",
+      "author": "Eskyrim",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/79733",
+      "nexusId": 79733,
+      "tags": ["Animation", "Movement", "Parkour"]
+    },
+    "Immersive Interactions - Animated Actions": {
+      "summary": "Adds interaction animations for sitting, using objects, picking locks, and more. NPCs and the player have realistic contextual actions.",
+      "category": "Gameplay",
+      "author": "MongoMonk",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/47178",
+      "nexusId": 47178,
+      "tags": ["Animation", "Immersion", "NPC"]
+    },
+    "NPC Animation Remix (OAR)": {
+      "summary": "Adds varied idle animations for NPCs so they don't all use the same generic pose. Guards lean on walls, merchants shift weight, etc.",
+      "category": "Gameplay",
+      "author": "Eskyrim",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/58806",
+      "nexusId": 58806,
+      "tags": ["Animation", "NPC", "Immersion"]
+    },
+    "Gesture Animation Remix": {
+      "summary": "Adds varied conversational gesture animations for NPCs during dialogue, making conversations feel more natural and alive.",
+      "category": "Gameplay",
+      "author": "Eskyrim",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/64420",
+      "nexusId": 64420,
+      "tags": ["Animation", "NPC", "Dialogue", "Immersion"]
+    },
+    "Dynamic Looting and Harvesting Animations": {
+      "summary": "Adds animations for looting bodies, harvesting ingredients, and searching containers.",
+      "category": "Gameplay",
+      "author": "mrowrpurr",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/97180",
+      "nexusId": 97180,
+      "tags": ["Animation", "Immersion"]
+    },
+    "Dynamic Crafting Animations": {
+      "summary": "Adds crafting animations at smithing stations, alchemy tables, and enchanting tables for a more immersive crafting experience.",
+      "category": "Gameplay",
+      "author": "mrowrpurr",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/105671",
+      "nexusId": 105671,
+      "tags": ["Animation", "Crafting", "Immersion"]
+    },
+    "Horse Behaviour Improvements": {
+      "summary": "Improves horse AI and movement behavior — horses navigate terrain better, respond more naturally, and feel less like static vehicles.",
+      "category": "Gameplay",
+      "author": "Sable",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/95225",
+      "nexusId": 95225,
+      "tags": ["Horses", "AI", "Movement"]
+    },
+    "Jump Behavior Overhaul SE": {
+      "summary": "Adds directional jump animations and improves jump behavior consistency for all movement states.",
+      "category": "Gameplay",
+      "author": "Maxsu",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/36889",
+      "nexusId": 36889,
+      "tags": ["Animation", "Movement"]
+    },
+    "Wade In Water Redone": {
+      "summary": "Restores Skyrim's cut wading animations when moving through shallow water. Makes river crossings and shoreline exploration more immersive.",
+      "category": "Gameplay",
+      "author": "DrJacopo",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/71418",
+      "nexusId": 71418,
+      "tags": ["Animation", "Movement", "Immersion"]
+    },
+    "VIGILANT SE": {
+      "summary": "A massive quest mod featuring 8-10+ hours of new content. Fight against the Molag Bal cult as a Vigilant of Stendarr. Dark Souls–inspired in tone, with punishing bosses, unique armors and weapons, and a deep narrative. One of LoreRim's premier quest experiences. Recommended level: 40+ and full Requiem preparation.",
+      "category": "Quest",
+      "author": "Vicn",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/11849",
+      "nexusId": 11849,
+      "tags": ["Quest", "New Content", "Dark", "Bosses", "Lore-Friendly"]
+    },
+    "Wyrmstooth": {
+      "summary": "Adds a new island — Wyrmstooth — with a substantial questline centered on a powerful dragon. Includes new dungeons, NPCs, armor, and weapons. A well-crafted expansion-quality mod. Recommended: Lv20+ and strong Requiem build.",
+      "category": "Quest",
+      "author": "Jonx0r",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/45565",
+      "nexusId": 45565,
+      "tags": ["Quest", "New Lands", "Dragon", "New Content"]
+    },
+    "The Forgotten City": {
+      "summary": "Award-winning time-loop mystery in an ancient underground Dwemer city. Heavy on dialogue, choice, and consequence. Multiple endings. Adapted into a standalone game. One of the most story-rich quest mods ever made — take your time with it.",
+      "category": "Quest",
+      "author": "Modern Storyteller",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/1179",
+      "nexusId": 1179,
+      "tags": ["Quest", "Mystery", "Dwemer", "Multiple Endings", "Story-Rich"]
+    },
+    "The Gray Cowl of Nocturnal - 10th anniversary": {
+      "summary": "Adds a large questline set in Hammerfell with a fully voiced cast. You pursue the legendary Gray Cowl of Nocturnal across a new area. Excellent production quality with custom music and complex quests.",
+      "category": "Quest",
+      "author": "Betalille",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/4845",
+      "nexusId": 4845,
+      "tags": ["Quest", "Hammerfell", "Thieves Guild", "New Content"]
+    },
+    "Undeath Remastered": {
+      "summary": "Adds a questline that lets you become a Lich — one of the most powerful undead forms in TES lore. Requires completing a complex ritual and facing powerful enemies. A major character arc choice with permanent consequences.",
+      "category": "Quest",
+      "author": "Antioch08",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/6625",
+      "nexusId": 6625,
+      "tags": ["Quest", "Lich", "Magic", "Undead", "Character Build"]
+    },
+    "SIRENROOT - Deluge of Deceit": {
+      "summary": "A dialogue-heavy dungeon dive into Ayleid ruins featuring puzzles, platforming, and water mechanics. Influences from Tomb Raider and Dragon Age. 2-5 hours with multiple endings. Hired by the Black-Briars to investigate a cave — nothing is what it seems.",
+      "category": "Quest",
+      "author": "ElSopa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/70917",
+      "nexusId": 70917,
+      "tags": ["Quest", "Ayleid", "Puzzle", "Multiple Endings", "Immersive"]
+    },
+    "Heart of the Reach": {
+      "summary": "Sends you into the Ever-Bog, an underground swamp beneath the Reach, to help a desperate priest. Features unique enemies, weapons, a ring, and a moral choice at the end. Start by speaking to Gwilym at the Silver-Blood Inn.",
+      "category": "Quest",
+      "author": "jayserpa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/76494",
+      "nexusId": 76494,
+      "tags": ["Quest", "Dungeon", "The Reach", "New Weapons"]
+    },
+    "Meridia's Order": {
+      "summary": "Expansive questline making you Meridia's Champion fighting a Necromantic Tyranny threat. 15+ quests with choice-based completion, fully voiced characters, and dynamic NPC decisions. Begin after completing 'The Break of Dawn' at level 12+.",
+      "category": "Quest",
+      "author": "Vesperjl",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/102584",
+      "nexusId": 102584,
+      "tags": ["Quest", "Meridia", "Paladin", "New Content", "Fully Voiced"]
+    },
+    "Sleepwalking Into A Nightmare - New Daedric Prince Quest": {
+      "summary": "You track a missing woman and dive into her nightmares to overcome her fears in a quest tied to a new Daedric entity. Features 2 new spells, a helmet, bow, ring, and two endings. Fully voiced. Start by speaking to Ralforn north-east of Ivarstead.",
+      "category": "Quest",
+      "author": "TheLootist",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/141047",
+      "nexusId": 141047,
+      "tags": ["Quest", "Daedric", "New Weapons", "Fully Voiced"]
+    },
+    "Siege at Icemoth": {
+      "summary": "Small-scale new lands mod adding islands in the Sea of Ghosts with new locations, dungeons, and unique items inspired by Elder Scrolls: Blades. Travel from the Old Wooden Jetty northwest of Skyrim. Read the waterlogged journal on a dead mercenary to start.",
+      "category": "Quest",
+      "author": "JaySerpa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/109541",
+      "nexusId": 109541,
+      "tags": ["Quest", "New Lands", "New Locations", "Sea of Ghosts"]
+    },
+    "Legends of Aetherium": {
+      "summary": "Adds a new dungeon, quest, armor set, and weapons tied to Aetherium lore. Fits naturally into the Dwemer questline. Features unique enemies and a detailed underground location.",
+      "category": "Quest",
+      "author": "JaySerpa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/69807",
+      "nexusId": 69807,
+      "tags": ["Quest", "Dwemer", "Aetherium", "New Armor", "New Dungeon"]
+    },
+    "Miasma": {
+      "summary": "Fully-voiced quest set in the Ashlands of Solstheim. You assist an An-Xileel agent in taking down a rogue Telvanni wizard. Features a unique bow and lore-friendly references to TES locations. Speak to Haj-Xul at the Retching Netch. Recommended: Lv20+.",
+      "category": "Quest",
+      "author": "OdinPlus",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/149879",
+      "nexusId": 149879,
+      "tags": ["Quest", "Solstheim", "Morrowind Lore", "Fully Voiced"]
+    },
+    "Extended Cut - Saints and Seducers": {
+      "summary": "Massively expands the Saints and Seducers Creation Club content into a full questline with proper voice acting, new locations, and a coherent story. Transforms CC content into real mod quality.",
+      "category": "Quest",
+      "author": "Bethesda, community expanded",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/72720",
+      "nexusId": 72720,
+      "tags": ["Quest", "Creation Club", "Sheogorath", "New Content"]
+    },
+    "Alternate Perspective": {
+      "summary": "Replaces Helgen with a new alternate start system. You begin in a configurable backstory location without the intro sequence. LoreRim uses this as the default start — choose your background wisely as starting location affects early-game Requiem difficulty significantly.",
+      "category": "Quest",
+      "author": "SomethingObscure",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/50307",
+      "nexusId": 50307,
+      "tags": ["Alternate Start", "Quest", "Required Reading"]
+    },
+    "House of Horrors - Quest Expansion": {
+      "summary": "Expands Molag Bal's daedric quest with new choices, consequences, and the option to refuse or fight back against the Daedric Prince. Adds moral weight to one of the game's darkest quests.",
+      "category": "Quest",
+      "author": "jayserpa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/85429",
+      "nexusId": 85429,
+      "tags": ["Quest", "Vanilla Expansion", "Daedric", "Moral Choice"]
+    },
+    "Paarthurnax - Quest Expansion": {
+      "summary": "Gives players meaningful new options in the Paarthurnax dilemma — you can negotiate, find alternatives, or stand your ground against the Blades in a way that feels earned.",
+      "category": "Quest",
+      "author": "jayserpa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/72854",
+      "nexusId": 72854,
+      "tags": ["Quest", "Vanilla Expansion", "Dragon", "Moral Choice"]
+    },
+    "College of Winterhold - Quest Expansion": {
+      "summary": "Expands the College questline with new tasks, improved structure, and better integration of your academic role. Makes the mage faction feel more like an actual college.",
+      "category": "Quest",
+      "author": "jayserpa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/70588",
+      "nexusId": 70588,
+      "tags": ["Quest", "Vanilla Expansion", "Mage", "College of Winterhold"]
+    },
+    "The Only Cure - Quest Expansion": {
+      "summary": "Expands Peryite's daedric quest with new dialogue choices, additional objectives, and a more meaningful conclusion to the Afflicted storyline.",
+      "category": "Quest",
+      "author": "jayserpa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/66913",
+      "nexusId": 66913,
+      "tags": ["Quest", "Vanilla Expansion", "Daedric", "Peryite"]
+    },
+    "The Whispering Door - Quest Expansion": {
+      "summary": "Expands Mephala's quest with new story beats, improved integration with Wintersun, and additional consequences for the choices made at Dragonsreach.",
+      "category": "Quest",
+      "author": "jayserpa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/76273",
+      "nexusId": 76273,
+      "tags": ["Quest", "Vanilla Expansion", "Daedric", "Mephala"]
+    },
+    "The Innocence Lost - Quest Expansion": {
+      "summary": "Expands the Dark Brotherhood recruitment quest with new choices — you can warn Aventus, investigate, or join through alternative means.",
+      "category": "Quest",
+      "author": "jayserpa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/80974",
+      "nexusId": 80974,
+      "tags": ["Quest", "Vanilla Expansion", "Dark Brotherhood"]
+    },
+    "Destroy The Dark Brotherhood - Quest Expansion": {
+      "summary": "Greatly expands the option to destroy the Dark Brotherhood — adds a full questline, new NPCs, and proper content for the path Bethesda left almost empty.",
+      "category": "Quest",
+      "author": "jayserpa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/80959",
+      "nexusId": 80959,
+      "tags": ["Quest", "Vanilla Expansion", "Dark Brotherhood"]
+    },
+    "Caught Red Handed - Quest Expansion": {
+      "summary": "Expands the Haelga blackmail quest with new options and consequences that fit the Thieves Guild's moral framework better.",
+      "category": "Quest",
+      "author": "jayserpa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/65958",
+      "nexusId": 65958,
+      "tags": ["Quest", "Vanilla Expansion", "Thieves Guild"]
+    },
+    "The Heart of Dibella - Quest Expansion": {
+      "summary": "Expands the Markarth temple quest with proper investigation, new NPCs, and meaningful choices tied to Dibella's divine domain.",
+      "category": "Quest",
+      "author": "jayserpa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/79786",
+      "nexusId": 79786,
+      "tags": ["Quest", "Vanilla Expansion", "Markarth"]
+    },
+    "Search and Seizure - Quest Expansion": {
+      "summary": "Expands the Thalmor Embassy infiltration with more options, better stealth routes, and meaningful consequences tied to what you discover.",
+      "category": "Quest",
+      "author": "jayserpa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/79607",
+      "nexusId": 79607,
+      "tags": ["Quest", "Vanilla Expansion", "Thalmor", "Stealth"]
+    },
+    "Nilheim - Misc Quest Expansion": {
+      "summary": "Adds a small quest for the Nilheim bandit encounter, giving the interaction more context and choice rather than a simple ambush.",
+      "category": "Quest",
+      "author": "jayserpa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/52437",
+      "nexusId": 52437,
+      "tags": ["Quest", "Vanilla Expansion", "Bandit"]
+    },
+    "The Choice is Yours": {
+      "summary": "Prevents NPCs from starting quests until you explicitly agree. Stops random NPCs from dumping quests on you mid-conversation — essential for intentional roleplaying.",
+      "category": "Gameplay",
+      "author": "kerstyn",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/3850",
+      "nexusId": 3850,
+      "tags": ["Quest", "Roleplay", "Quality of Life"]
+    },
+    "Timing is Everything SE": {
+      "summary": "Controls when quests trigger based on level, skill, and other conditions. Prevents Dawnguard, Dragonborn, and other DLC quests from starting too early in Requiem.",
+      "category": "Gameplay",
+      "author": "kerstyn",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/25464",
+      "nexusId": 25464,
+      "tags": ["Quest", "Balance", "Requiem", "DLC Timing"]
+    },
+    "Missives": {
+      "summary": "Adds radiant contract boards to towns throughout Skyrim. Bounties, deliveries, and small tasks that fit naturally into any playthrough and provide low-level income.",
+      "category": "Quest",
+      "author": "Loot and Degradation",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/17576",
+      "nexusId": 17576,
+      "tags": ["Quest", "Radiant", "Contracts", "Economy"]
+    },
+    "INIGO": {
+      "summary": "A fully voiced Khajiit follower with ~7,000 lines of context-aware dialogue. Reacts to quests, locations, weather, and other followers. Has his own backstory and arc. One of the most sophisticated followers ever made — worth investing in his personal quest.",
+      "category": "Quest",
+      "author": "Smartbluecat",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/35367",
+      "nexusId": 35367,
+      "tags": ["Follower", "Khajiit", "Fully Voiced", "Custom Story"]
+    },
+    "Lucien - Immersive Fully Voiced Male Follower": {
+      "summary": "A fully voiced Imperial scholar follower with ~5,000 lines of commentary on quests, locations, and lore. Grows and changes based on your adventures. Has cross-mod banter with Inigo, Auri, and others.",
+      "category": "Quest",
+      "author": "Joseph Russell",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/29295",
+      "nexusId": 29295,
+      "tags": ["Follower", "Imperial", "Fully Voiced", "Custom Story"]
+    },
+    "Song of the Green (Auri Follower)": {
+      "summary": "A fully voiced Bosmer archer follower with deep lore connections to Valenwood and the Green Pact. Has her own questline, dialogue reactions to every major quest, and banter with Inigo and Lucien.",
+      "category": "Quest",
+      "author": "Synth",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/11278",
+      "nexusId": 11278,
+      "tags": ["Follower", "Bosmer", "Archer", "Fully Voiced", "Custom Story"]
+    },
+    "Remiel-Custom Voiced Dwemer Specialist and Companion": {
+      "summary": "A fully voiced Breton engineer with ~5,000 lines. She travels from Wayrest to explore Dwemer ruins and brings a reprogrammed Dwemer spider companion. Not a fighter — she supports and comments. Has her own framework similar to Inigo.",
+      "category": "Quest",
+      "author": "Heironymous",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/51874",
+      "nexusId": 51874,
+      "tags": ["Follower", "Dwemer", "Breton", "Fully Voiced", "Custom Story"]
+    },
+    "Gore - A Companion Mod": {
+      "summary": "A fully voiced follower with 5,000+ lines including a Vigilant add-on. Gore has a dark past and is in love with life — complex character arc told through two main quests. Optional survival camping system. Coverage for all main factions and DLC.",
+      "category": "Quest",
+      "author": "Ryn",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/85298",
+      "nexusId": 85298,
+      "tags": ["Follower", "Fully Voiced", "Custom Story", "VIGILANT Banter"]
+    },
+    "Katana - Journey in the Shadows": {
+      "summary": "A fully voiced Redguard follower with a stealth-focused playstyle and her own questline. Has unique dialogue and a personal arc about redemption and identity.",
+      "category": "Quest",
+      "author": "Alixander Court",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/69552",
+      "nexusId": 69552,
+      "tags": ["Follower", "Redguard", "Stealth", "Fully Voiced", "Custom Story"]
+    },
+    "The Thalmor's Shadow - Taliesin": {
+      "summary": "A fully custom voiced Altmer follower who works as a Thalmor intelligence operative. Morally grey, witty, and complex. Unique questline tied to Thalmor politics and Skyrim's civil war.",
+      "category": "Quest",
+      "author": "SerketHetyt",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/44174",
+      "nexusId": 44174,
+      "tags": ["Follower", "Altmer", "Thalmor", "Fully Voiced", "Custom Story"]
+    },
+    "The Frozen Heart - Quest Mod": {
+      "summary": "A quest mod featuring a new follower, new locations, and a story about a cursed artifact. Includes custom voiced characters and dungeon content.",
+      "category": "Quest",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/159911",
+      "nexusId": 159911,
+      "tags": ["Quest", "Follower", "New Content"]
+    },
+    "Dark Hierophant Magic": {
+      "summary": "Adds a dark priest archetype with powerful debuffs, life drain, and bone magic spells. Patched into Requiem Magic Redone. Ideal for necromancer or dark cleric concepts.",
+      "category": "Gameplay",
+      "author": "Darenii",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/56332",
+      "nexusId": 56332,
+      "tags": ["Magic", "Spells", "Dark Magic", "Necromancer"]
+    },
+    "Ancient Blood Magic II": {
+      "summary": "Adds hemomancy spells focused on blood manipulation — sacrificing health for power, blood curses, and life-steal. Strong synergy with vampire builds.",
+      "category": "Gameplay",
+      "author": "Darenii",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/57747",
+      "nexusId": 57747,
+      "tags": ["Magic", "Spells", "Vampire", "Blood Magic"]
+    },
+    "Frostbitten Dreams Magic": {
+      "summary": "Adds ice and dream-themed spells centered on slowing, freezing, and illusion-adjacent effects. Distinctive visual style and thematic cohesion.",
+      "category": "Gameplay",
+      "author": "Darenii",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/72031",
+      "nexusId": 72031,
+      "tags": ["Magic", "Spells", "Ice", "Illusion"]
+    },
+    "Wildwaker Magic": {
+      "summary": "Nature-themed magic pack with animal-summoning, root entanglement, and druidic spells. Best suited for nature mage or druid archetypes.",
+      "category": "Gameplay",
+      "author": "Darenii",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/79029",
+      "nexusId": 79029,
+      "tags": ["Magic", "Spells", "Druid", "Nature"]
+    },
+    "Obscure Magic": {
+      "summary": "Adds esoteric, unusual spells that don't fit standard school categories — reality distortion, spatial manipulation, and occult effects.",
+      "category": "Gameplay",
+      "author": "Darenii",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/55782",
+      "nexusId": 55782,
+      "tags": ["Magic", "Spells", "Unique", "Occult"]
+    },
+    "Sonic Magic": {
+      "summary": "Sound-based magic — sonic blasts, reverberating shockwaves, and ear-splitting screams. Fills a unique combat niche for a voice-themed mage.",
+      "category": "Gameplay",
+      "author": "Darenii",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/60461",
+      "nexusId": 60461,
+      "tags": ["Magic", "Spells", "Sound", "Unique"]
+    },
+    "Constellation Magic": {
+      "summary": "Star and constellation-themed magic with celestial projectiles, astral shields, and starfall effects. Visually distinctive and thematically cohesive.",
+      "category": "Gameplay",
+      "author": "Darenii",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/72073",
+      "nexusId": 72073,
+      "tags": ["Magic", "Spells", "Celestial", "Unique"]
+    },
+    "Abyssal Tides Magic": {
+      "summary": "Ocean and deep-water themed magic — drowning curses, tidal waves, brine burns, and abyssal summoning. Excellent for mer or sea-themed characters.",
+      "category": "Gameplay",
+      "author": "Darenii",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/76946",
+      "nexusId": 76946,
+      "tags": ["Magic", "Spells", "Water", "Unique"]
+    },
+    "Runemaster Magic": {
+      "summary": "Nordic rune-based magic — inscribed runes, ward totems, and explosive glyphs. Thematically fits Nord or Dwemer-adjacent mage concepts.",
+      "category": "Gameplay",
+      "author": "Darenii",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/69729",
+      "nexusId": 69729,
+      "tags": ["Magic", "Spells", "Nordic", "Runes"]
+    },
+    "Holy Templar Magic": {
+      "summary": "Divine paladin spells — holy light, sacred wards, radiant smites, and blessed restoration. Core spell pool for paladin or crusader builds.",
+      "category": "Gameplay",
+      "author": "Darenii",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/68208",
+      "nexusId": 68208,
+      "tags": ["Magic", "Spells", "Paladin", "Holy", "Restoration"]
+    },
+    "Wizarding Traversal Magic": {
+      "summary": "Adds magical movement spells — blinks, teleports, and levitation variants. Expands mobility options for dedicated mage builds.",
+      "category": "Gameplay",
+      "author": "Darenii",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/72826",
+      "nexusId": 72826,
+      "tags": ["Magic", "Spells", "Movement", "Alteration"]
+    },
+    "Elemental Mastery Magic": {
+      "summary": "Expands fire, frost, and shock magic with new high-tier spells for each element. Gives elemental mages powerful endgame options beyond vanilla destruction.",
+      "category": "Gameplay",
+      "author": "Darenii",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/81155",
+      "nexusId": 81155,
+      "tags": ["Magic", "Spells", "Destruction", "Elemental"]
+    },
+    "LoreBox - Item and Spell Tooltips": {
+      "summary": "Displays descriptive tooltips when hovering over items and spells in your inventory. Multiple mods can add tooltip text without conflicts. LoreRim uses this for spell and item lore text.",
       "category": "UI",
-      "author": "dopesan",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/49881",
-      "nexusId": 49881,
-      "tags": ["UI", "HUD", "Interface"]
+      "author": "Parapets",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/156534",
+      "nexusId": 156534,
+      "tags": ["UI", "Lore", "Tooltips", "Framework"]
     },
-    "Campfire - Complete Camping System": {
-      "summary": "A fully-featured camping system with tents, campfires, survival skills, and roleplay elements. Integrates with Frostfall for a complete survival experience.",
-      "category": "Survival",
-      "author": "Chesko",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/667",
-      "nexusId": 667,
-      "tags": ["Survival", "Camping", "Immersion"]
+    "Nightingale Powers Redone": {
+      "summary": "Overhauls the Nightingale Sentinel ability and Nocturnal's blessings to be more meaningful and thematically appropriate for the Thieves Guild arc.",
+      "category": "Gameplay",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/43288",
+      "nexusId": 43288,
+      "tags": ["Magic", "Thieves Guild", "Nocturnal"]
     },
-    "Frostfall - Hypothermia Camping Survival": {
-      "summary": "Adds a thermal system where exposure to cold weather, rain, and water can kill you. Requires managing warmth through clothing, fires, and shelter. Core survival mod — dress appropriately for conditions in LoreRim.",
-      "category": "Survival",
-      "author": "Chesko",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/671",
-      "nexusId": 671,
-      "tags": ["Survival", "Cold", "Hypothermia", "Immersion"]
+    "Spell Absorption Rework - A Non-Chance Based System": {
+      "summary": "Replaces Requiem's RNG spell absorption with a consistent percentage-based system. Makes magic resistance predictable and fair.",
+      "category": "Gameplay",
+      "author": "Styyx",
+      "tags": ["Magic", "Requiem", "Balance"]
     },
-    "iNeed - Food Water and Sleep": {
-      "summary": "Adds needs for food, water, and sleep that must be managed. Starvation, dehydration, and sleep deprivation have increasingly severe penalties. Core survival mechanic in LoreRim.",
-      "category": "Survival",
-      "author": "isoku",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/645",
-      "nexusId": 645,
-      "tags": ["Survival", "Needs", "Food", "Immersion"]
+    "Experience": {
+      "summary": "Overhauls how XP is gained — you earn experience from killing enemies, completing quests, discovering locations, and crafting, instead of skill use. Levels feel meaningful and intentional. Core to LoreRim's progression alongside Static Skill Leveling.",
+      "category": "Gameplay",
+      "author": "meh321",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/17751",
+      "nexusId": 17751,
+      "tags": ["Gameplay", "Progression", "XP", "Core Gameplay"]
     },
-    "Obsidian Weathers and Seasons": {
-      "summary": "An atmospheric weather overhaul with over 75 weather varieties, stunning sunsets, and immersive storms. Pairs with ENB presets for LoreRim's visual presentation.",
+    "Static Skill Leveling Rewritten": {
+      "summary": "On level up, you spend points to increase skills directly instead of skills leveling from use. Works with Experience mod. Your skill investment choices define your build — this is your character sheet.",
+      "category": "Gameplay",
+      "author": "meh321",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/89940",
+      "nexusId": 89940,
+      "tags": ["Gameplay", "Progression", "Skills", "Core Gameplay"]
+    },
+    "Biggie Traits": {
+      "summary": "Adds character-defining traits chosen at the start of your playthrough. Each trait provides meaningful bonuses or drawbacks that shape your build identity. Patched into Requiem — your trait choice is permanent.",
+      "category": "Gameplay",
+      "author": "Biggie_Boss",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/136384",
+      "nexusId": 136384,
+      "tags": ["Gameplay", "Character Building", "LoreRim", "Traits"]
+    },
+    "Subclasses of Skyrim": {
+      "summary": "Adds subclass choices that provide specialized passives for focused archetypes — assassin, battlemage, ranger, etc. Works alongside traits and perks for deeper build identity.",
+      "category": "Gameplay",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/68580",
+      "nexusId": 68580,
+      "tags": ["Gameplay", "Character Building", "Subclass"]
+    },
+    "Perk Point Potion": {
+      "summary": "Adds rare craftable potions that grant bonus perk points. Provides an additional avenue for perk acquisition tied to alchemy investment.",
+      "category": "Gameplay",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/49017",
+      "nexusId": 49017,
+      "tags": ["Gameplay", "Perks", "Alchemy"]
+    },
+    "Respawn - Soulslike Edition": {
+      "summary": "On death, you drop your gold at the death location and respawn at your last sleep point. Retrieve your gold or it's lost forever. Adds souls-like stakes to Requiem's already punishing difficulty.",
+      "category": "Gameplay",
+      "author": "eeeickythump",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/69267",
+      "nexusId": 69267,
+      "tags": ["Gameplay", "Difficulty", "Death Mechanics", "Soulslike"]
+    },
+    "Save our Souls - Death Alternative": {
+      "summary": "On death, triggers a dramatic rescue or consequence rather than instant reload. Integrates with Respawn for narrative death mechanics.",
+      "category": "Gameplay",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/121558",
+      "nexusId": 121558,
+      "tags": ["Gameplay", "Death Mechanics", "Immersion"]
+    },
+    "Survival Mode Improved - SKSE": {
+      "summary": "Fixes and improves Skyrim's built-in Survival Mode — better hunger/fatigue formulas, proper resting bonuses, and improved warmth calculations.",
+      "category": "Gameplay",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/78541",
+      "nexusId": 78541,
+      "tags": ["Survival", "Needs", "Immersion"]
+    },
+    "Survival Control Panel": {
+      "summary": "MCM panel for configuring Skyrim's Survival Mode — adjust need rates, sleep requirements, and warmth penalties to your preferred difficulty.",
+      "category": "Gameplay",
+      "author": "Parapets",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/41801",
+      "nexusId": 41801,
+      "tags": ["Survival", "Configuration", "MCM"]
+    },
+    "CC's Camping Expansion": {
+      "summary": "Expands the Creation Club camping content with additional features, recipes, and integration with survival mechanics.",
+      "category": "Gameplay",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/77033",
+      "nexusId": 77033,
+      "tags": ["Survival", "Camping", "Creation Club"]
+    },
+    "Alchemy Requires Bottles Redux": {
+      "summary": "Makes alchemy require empty bottles to craft potions. Adds a resource management layer to alchemy — gather bottles from taverns and vendors.",
+      "category": "Gameplay",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/67689",
+      "nexusId": 67689,
+      "tags": ["Alchemy", "Survival", "Immersion", "Resource Management"]
+    },
+    "Equipment Durability System NG": {
+      "summary": "Adds weapon and armor degradation over time and use. Equipment must be repaired at smithing stations. Adds a maintenance dimension to gear management.",
+      "category": "Gameplay",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/71742",
+      "nexusId": 71742,
+      "tags": ["Gameplay", "Gear", "Durability", "Immersion"]
+    },
+    "Dynamic Weather and Time Based Detection": {
+      "summary": "Adjusts NPC detection based on weather and time of day — harder to sneak in daylight, easier in fog and darkness. Makes stealth timing matter.",
+      "category": "Gameplay",
+      "author": "GracesHeart",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/45398",
+      "nexusId": 45398,
+      "tags": ["Stealth", "Detection", "Immersion", "Weather"]
+    },
+    "Smart NPC Potions - Enemies Use Potions and Poisons": {
+      "summary": "NPCs intelligently use potions and poisons during combat based on their situation. Enemy healers and poisoners become real tactical threats.",
+      "category": "Gameplay",
+      "author": "Lively",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/40765",
+      "nexusId": 40765,
+      "tags": ["Combat", "AI", "NPC", "Potions"]
+    },
+    "NPCs Take Cover - Smarter Anti-Cheese AI": {
+      "summary": "Makes NPCs seek cover, flank, and reposition intelligently instead of standing in the open. Closes exploits where you could pick enemies off from safety.",
+      "category": "Gameplay",
+      "author": "colinswrath",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/68720",
+      "nexusId": 68720,
+      "tags": ["Combat", "AI", "NPC", "Anti-Cheese"]
+    },
+    "Simple Hunting Overhaul": {
+      "summary": "Adds skinning mechanics for animals — harvest pelts, meat, and organs from corpses using a hunting knife. Makes wildlife economically valuable.",
+      "category": "Gameplay",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/54131",
+      "nexusId": 54131,
+      "tags": ["Gameplay", "Hunting", "Economy", "Immersion"]
+    },
+    "Carry Your Carcasses": {
+      "summary": "Allows physically picking up and carrying animal carcasses. Works with Simple Hunting Overhaul for a complete hunting workflow.",
+      "category": "Gameplay",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/68000",
+      "nexusId": 68000,
+      "tags": ["Gameplay", "Hunting", "Immersion"]
+    },
+    "Dynamic Mercenary Fees": {
+      "summary": "Mercenary costs scale based on your level and wealth. High-level players pay more for followers — economy stays relevant.",
+      "category": "Gameplay",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/74292",
+      "nexusId": 74292,
+      "tags": ["Economy", "Followers", "Balance"]
+    },
+    "Waterskin - Stay Hydrated In Tamriel": {
+      "summary": "Adds a waterskin item that must be refilled from water sources. Part of LoreRim's survival layer alongside food and sleep.",
+      "category": "Gameplay",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/75778",
+      "nexusId": 75778,
+      "tags": ["Survival", "Needs", "Immersion"]
+    },
+    "Just Blood - Dirt and Blood Lite": {
+      "summary": "Adds visible blood and dirt accumulation on the player and NPCs during combat and exploration. Lightweight visual immersion mod.",
       "category": "Visuals",
-      "author": "SomberLad",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/12125",
-      "nexusId": 12125,
-      "tags": ["Visuals", "Weather", "Atmosphere"]
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/46501",
+      "nexusId": 46501,
+      "tags": ["Visual", "Immersion", "Combat"]
     },
-    "Lanterns Of Skyrim II": {
-      "summary": "Adds thousands of lanterns throughout Skyrim, illuminating roads, towns, and dungeons for a more atmospheric and practical lighting experience.",
-      "category": "Visuals",
-      "author": "MannyGT",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/30817",
-      "nexusId": 30817,
-      "tags": ["Visuals", "Lighting", "Atmosphere"]
+    "No Crime Teleport RE": {
+      "summary": "Removes the teleportation behavior when guards arrest you — you walk to jail rather than being instantly transported. More immersive crime consequences.",
+      "category": "Gameplay",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/64214",
+      "nexusId": 64214,
+      "tags": ["Immersion", "Crime", "Roleplay"]
+    },
+    "Difficulty Sliders": {
+      "summary": "Separates Skyrim's global difficulty into individual sliders for damage dealt/received, NPC AI, and loot. Fine-tune your experience without affecting all systems at once.",
+      "category": "Gameplay",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/17916",
+      "nexusId": 17916,
+      "tags": ["Gameplay", "Difficulty", "Configuration"]
+    },
+    "Legendary Enemies": {
+      "summary": "Adds rare legendary variants of enemies with enhanced stats, abilities, and unique loot. Makes the world feel more unpredictable and rewarding for high-level characters.",
+      "category": "Gameplay",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/43249",
+      "nexusId": 43249,
+      "tags": ["Combat", "Enemies", "Challenge", "Loot"]
+    },
+    "Engaging Combat - Keep Combat Dynamic at Higher Levels": {
+      "summary": "Prevents the late-game from becoming trivially easy by keeping enemies engaged and dangerous even as your character becomes powerful.",
+      "category": "Gameplay",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/56794",
+      "nexusId": 56794,
+      "tags": ["Combat", "Balance", "Late Game"]
+    },
+    "AI Overhaul SSE": {
+      "summary": "Improves NPC schedules, sandbox behavior, and daily routines. NPCs eat, sleep, work, and react more realistically. Dramatically improves town and city atmosphere.",
+      "category": "Immersion",
+      "author": "Dr. Jacopo",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/21654",
+      "nexusId": 21654,
+      "tags": ["NPC", "AI", "Immersion", "Schedule"]
     },
     "Guard Dialogue Overhaul SE": {
-      "summary": "Improves guard dialogue so guards no longer reference player actions they shouldn't be aware of, and adds new dialogue for various situations. Eliminates most immersion-breaking guard comments.",
+      "summary": "Fixes guard dialogue so they stop referencing things they shouldn't know about, and adds context-appropriate new lines. Eliminates most immersion-breaking guard comments.",
       "category": "Immersion",
       "author": "Eckss",
       "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/22075",
       "nexusId": 22075,
+      "tags": ["Dialogue", "Guards", "Immersion", "NPC"]
+    },
+    "Bandit Lines Expansion": {
+      "summary": "Adds hundreds of new voiced bandit lines covering more situations, reactions, and banter. Bandits feel less repetitive over a long playthrough.",
+      "category": "Immersion",
+      "author": "jayserpa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/67863",
+      "nexusId": 67863,
+      "tags": ["Dialogue", "Bandit", "Immersion", "Voice"]
+    },
+    "Falmer Servant Lines Expansion": {
+      "summary": "Adds unique dialogue for enslaved Falmer servants, giving them personality and making their servitude more unsettling and lore-rich.",
+      "category": "Immersion",
+      "author": "jayserpa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/67098",
+      "nexusId": 67098,
+      "tags": ["Dialogue", "Falmer", "Dwemer", "Immersion"]
+    },
+    "Vampire Lines Expansion": {
+      "summary": "Adds new voiced dialogue for vampires and vampire thralls. Makes vampire NPCs feel more threatening and intelligent.",
+      "category": "Immersion",
+      "author": "jayserpa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/67055",
+      "nexusId": 67055,
+      "tags": ["Dialogue", "Vampire", "Dawnguard", "Immersion"]
+    },
+    "Civil War Lines Expansion": {
+      "summary": "Adds new dialogue for Stormcloak and Imperial soldiers, making the civil war feel like a genuine ideological conflict rather than a backdrop.",
+      "category": "Immersion",
+      "author": "jayserpa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/77566",
+      "nexusId": 77566,
+      "tags": ["Dialogue", "Civil War", "Immersion", "Faction"]
+    },
+    "Dremora Lines Expansion": {
+      "summary": "Adds unique Dremora dialogue that reflects their culture of domination, pride, and contempt. Makes Daedric encounters feel genuinely alien.",
+      "category": "Immersion",
+      "author": "jayserpa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/65104",
+      "nexusId": 65104,
+      "tags": ["Dialogue", "Dremora", "Daedric", "Immersion"]
+    },
+    "Extended Guard Dialogue": {
+      "summary": "Expands guard dialogue with more situation-specific lines for various player states, crimes, and locations. Guards feel more aware.",
+      "category": "Immersion",
+      "author": "Lawkeeper",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/22571",
+      "nexusId": 22571,
       "tags": ["Dialogue", "Guards", "Immersion"]
     },
-    "Sounds of Skyrim Complete SE": {
-      "summary": "Adds hundreds of new ambient sound effects to Skyrim's dungeons, wilderness, towns, and interiors. Greatly improves atmospheric immersion.",
-      "category": "Audio",
-      "author": "clofas1",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/8286",
-      "nexusId": 8286,
-      "tags": ["Audio", "Ambient", "Immersion"]
+    "Extended Bandit Dialogue": {
+      "summary": "More bandit banter, taunts, and situational reactions. Works alongside Bandit Lines Expansion for comprehensive bandit voice coverage.",
+      "category": "Immersion",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/31487",
+      "nexusId": 31487,
+      "tags": ["Dialogue", "Bandit", "Immersion"]
     },
-    "Requiem - Dragonborn Patch": {
-      "summary": "Official Requiem patch for the Dragonborn DLC, adjusting enemy stats, leveled lists, and content to fit Requiem's deleveled world. Required if playing with Dragonborn content.",
-      "category": "Patch",
-      "author": "Ogerboss",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/60888",
-      "nexusId": 60888,
-      "tags": ["Patch", "Requiem", "Dragonborn"]
+    "Collision Dialogue Overhaul": {
+      "summary": "Adds new NPC reactions when you physically bump into them — less generic, more personality-driven responses based on race and faction.",
+      "category": "Immersion",
+      "author": "Lively",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/56486",
+      "nexusId": 56486,
+      "tags": ["Dialogue", "NPC", "Immersion"]
     },
-    "Requiem - Dawnguard Patch": {
-      "summary": "Official Requiem patch for the Dawnguard DLC, rebalancing vampire content and adjusting enemy difficulty for Requiem's deleveled world.",
-      "category": "Patch",
-      "author": "Ogerboss",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/60888",
-      "nexusId": 60888,
-      "tags": ["Patch", "Requiem", "Dawnguard"]
+    "Serana Dialogue Expansion": {
+      "summary": "Massively expands Serana's dialogue with thousands of new lines covering all stages of the Dawnguard questline, follower commentary, and post-quest content. Makes Serana feel genuinely fleshed out.",
+      "category": "Immersion",
+      "author": "BugFixes",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/32161",
+      "nexusId": 32161,
+      "tags": ["Dialogue", "Serana", "Dawnguard", "Follower"]
+    },
+    "More to Say": {
+      "summary": "Adds new dialogue to many named NPCs throughout Skyrim, giving them more to say about current events, the player's actions, and their own lives.",
+      "category": "Immersion",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/22622",
+      "nexusId": 22622,
+      "tags": ["Dialogue", "NPC", "Immersion"]
+    },
+    "Chatty NPCs and Followers": {
+      "summary": "Makes NPCs and followers comment more frequently on surroundings, events, and the player's actions. Increases ambient conversation density.",
+      "category": "Immersion",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/23028",
+      "nexusId": 23028,
+      "tags": ["Dialogue", "NPC", "Followers", "Immersion"]
+    },
+    "Followers React to Crafting": {
+      "summary": "Followers comment when you smith, enchant, and use alchemy stations. Small but surprisingly impactful for immersion during long crafting sessions.",
+      "category": "Immersion",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/36712",
+      "nexusId": 36712,
+      "tags": ["Dialogue", "Followers", "Crafting", "Immersion"]
+    },
+    "Companions Dialogue Bundle": {
+      "summary": "Adds new dialogue to Companions members, improving their reactivity and presence throughout the questline and beyond.",
+      "category": "Immersion",
+      "author": "jayserpa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/84933",
+      "nexusId": 84933,
+      "tags": ["Dialogue", "Companions", "Immersion"]
+    },
+    "Nordic Faces - Immersive Characters Overhaul": {
+      "summary": "Overhauls the faces of all vanilla NPCs with high-quality, lore-appropriate looks. Normals feel like Nords, Dunmer look alien, Khajiit look distinctive. Applies to all major and minor NPCs.",
+      "category": "Visuals",
+      "author": "Sarthes Arai",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/40658",
+      "nexusId": 40658,
+      "tags": ["NPC", "Visuals", "Appearance", "Character"]
     },
     "Lux": {
-      "summary": "A comprehensive lighting overhaul using a new approach to interior lighting with real light sources. Dramatically improves indoor ambience across all interiors in Skyrim.",
+      "summary": "Comprehensive interior lighting overhaul using real light sources. Every indoor space is dramatically improved with atmospheric, source-accurate lighting. One of LoreRim's foundational visual mods.",
       "category": "Visuals",
       "author": "altasilvapuer",
       "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/43158",
       "nexusId": 43158,
-      "tags": ["Visuals", "Lighting", "Interiors"]
+      "tags": ["Visuals", "Lighting", "Interior", "Core Visual"]
+    },
+    "Lux Via": {
+      "summary": "Extends Lux's lighting approach to roads and exterior paths — lanterns, torches, and roadside lights are placed accurately and consistently throughout Skyrim.",
+      "category": "Visuals",
+      "author": "altasilvapuer",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/63588",
+      "nexusId": 63588,
+      "tags": ["Visuals", "Lighting", "Exterior", "Roads"]
+    },
+    "Lux Orbis": {
+      "summary": "Lux's exterior lighting companion — handles exterior light sources on buildings, in cities, and around notable locations. Completes LoreRim's lighting overhaul.",
+      "category": "Visuals",
+      "author": "altasilvapuer",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/56095",
+      "nexusId": 56095,
+      "tags": ["Visuals", "Lighting", "Exterior", "Cities"]
+    },
+    "Embers XD": {
+      "summary": "Overhauls all fire and ember effects — campfires, hearths, torches, and braziers. Fire looks dynamic and alive. One of the most impactful visual improvements to interiors and campsites.",
+      "category": "Visuals",
+      "author": "Mindflux",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/37085",
+      "nexusId": 37085,
+      "tags": ["Visuals", "Fire", "FX", "Lighting"]
+    },
+    "Happy Little Trees": {
+      "summary": "Overhauls tree meshes throughout Skyrim with fuller, more natural-looking canopies. Dramatic improvement to forested areas without significant performance cost.",
+      "category": "Visuals",
+      "author": "Hein84",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/50961",
+      "nexusId": 50961,
+      "tags": ["Visuals", "Trees", "Nature"]
+    },
+    "Folkvangr - Grass and Landscape Overhaul": {
+      "summary": "Replaces Skyrim's grass system with lush, dense, varied ground cover. Fields and meadows look dramatically more natural. Performance-intensive but visually excellent.",
+      "category": "Visuals",
+      "author": "Kojak747",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/76424",
+      "nexusId": 76424,
+      "tags": ["Visuals", "Grass", "Nature", "Landscape"]
+    },
+    "Skyland AIO": {
+      "summary": "All-in-one texture overhaul for architecture, landscapes, and clutter across all of Skyrim. Covers nearly every surface with high-quality 2K textures. Core of LoreRim's visual foundation.",
+      "category": "Visuals",
+      "author": "Gutris1",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/34179",
+      "nexusId": 34179,
+      "tags": ["Visuals", "Textures", "Architecture", "Core Visual"]
+    },
+    "Static Mesh Improvement Mod": {
+      "summary": "Greatly improves 3D models for fences, chains, ropes, candles, cauldrons, and thousands of other objects. Foundational mesh quality improvement touching nearly every space in the game.",
+      "category": "Visuals",
+      "author": "Brumbek",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/659",
+      "nexusId": 659,
+      "tags": ["Visuals", "Meshes", "Objects", "Core Visual"]
+    },
+    "Better Dynamic Snow SE": {
+      "summary": "Replaces Skyrim's static snow shaders with dynamic ones that match terrain lighting and normals. Snow looks part of the world rather than painted on top.",
+      "category": "Visuals",
+      "author": "Hein84",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/47541",
+      "nexusId": 47541,
+      "tags": ["Visuals", "Snow", "Weather", "Landscape"]
+    },
+    "Nature of the Wild Lands": {
+      "summary": "Overhauls outdoor vegetation — adding bushes, undergrowth, rock plants, and improved tree density in specific biomes. Makes forests and wilderness feel genuinely wild.",
+      "category": "Visuals",
+      "author": "Drengin",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/63604",
+      "nexusId": 63604,
+      "tags": ["Visuals", "Trees", "Vegetation", "Nature"]
+    },
+    "Northern Roads": {
+      "summary": "Overhauls Skyrim's roads and paths with improved geometry, better curves, and contextual road furniture. Makes travel feel more grounded in the world.",
+      "category": "Visuals",
+      "author": "T4gtr34um3r",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/53937",
+      "nexusId": 53937,
+      "tags": ["Visuals", "Roads", "Architecture", "World"]
+    },
+    "eFPS - Exterior FPS boost": {
+      "summary": "Improves exterior performance by culling objects and cells that aren't visible from your current vantage point. Significant FPS improvement in cities and dense exterior areas.",
+      "category": "Framework",
+      "author": "Kvitekvist",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/54371",
+      "nexusId": 54371,
+      "tags": ["Performance", "Optimization", "Framework"]
+    },
+    "Flat World Map Framework (FWMF)": {
+      "summary": "Replaces Skyrim's 3D world map with a flat paper map style. LoreRim uses multiple paper map modules — Skyrim, Solstheim, Wyrmstooth, Vigilant, and more.",
+      "category": "UI",
+      "author": "Limon",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/29932",
+      "nexusId": 29932,
+      "tags": ["UI", "Map", "Visual", "Immersion"]
     },
     "DynDOLOD": {
-      "summary": "Generates dynamic distant object level of detail (LOD) for trees, objects, and terrain. Dramatically improves distant landscape quality. Pre-generated for LoreRim — do not regenerate without instructions.",
+      "summary": "Generates dynamic distant object LOD for trees, structures, and terrain. Pre-generated for LoreRim — dramatically improves distant landscape quality and eliminates LOD pop-in. Do not regenerate without following the LoreRim guide.",
       "category": "Visuals",
       "author": "sheson",
       "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/32382",
       "nexusId": 32382,
       "tags": ["Visuals", "LOD", "Performance", "Framework"]
     },
-    "Rudy ENB SE for Obsidian Weathers": {
-      "summary": "A high-quality ENB preset tuned for Obsidian Weathers. Provides dramatic post-processing effects, improved shadows, ambient occlusion, and god rays. The visual backbone of LoreRim's aesthetic.",
+    "JK's Dragonsreach": {
+      "summary": "Overhauls Dragonsreach interior with new furniture, decorations, and architectural detail. Part of the JK's Interiors series that overhauls every major interior in Skyrim.",
+      "category": "Visuals",
+      "author": "Jkrojmal",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/8070",
+      "nexusId": 8070,
+      "tags": ["Visuals", "Interior", "Whiterun", "JK's Series"]
+    },
+    "JK's The Bannered Mare": {
+      "summary": "Overhauls the Bannered Mare tavern with more furniture, atmosphere, and detail. Part of JK's Interiors series.",
+      "category": "Visuals",
+      "author": "Jkrojmal",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/4341",
+      "nexusId": 4341,
+      "tags": ["Visuals", "Interior", "Whiterun", "JK's Series"]
+    },
+    "JK's Blue Palace": {
+      "summary": "Overhauls the Blue Palace in Solitude with regal new furnishings and architectural details appropriate for Skyrim's seat of power.",
+      "category": "Visuals",
+      "author": "Jkrojmal",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/45324",
+      "nexusId": 45324,
+      "tags": ["Visuals", "Interior", "Solitude", "JK's Series"]
+    },
+    "JK's College of Winterhold": {
+      "summary": "Transforms the College of Winterhold into a proper magical institution with libraries, study areas, and research facilities appropriate for a mage guild.",
+      "category": "Visuals",
+      "author": "Jkrojmal",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/35895",
+      "nexusId": 35895,
+      "tags": ["Visuals", "Interior", "Winterhold", "JK's Series", "Mage"]
+    },
+    "JK's Castle Volkihar": {
+      "summary": "Overhauls the Volkihar vampire castle with properly ominous and opulent furnishings suited to an ancient vampire lord's stronghold.",
+      "category": "Visuals",
+      "author": "Jkrojmal",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/54512",
+      "nexusId": 54512,
+      "tags": ["Visuals", "Interior", "Vampire", "Dawnguard", "JK's Series"]
+    },
+    "JK's The Ragged Flagon": {
+      "summary": "Overhauls the Thieves Guild's Ragged Flagon tavern with a properly seedy, atmospheric underground look.",
+      "category": "Visuals",
+      "author": "Jkrojmal",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/42521",
+      "nexusId": 42521,
+      "tags": ["Visuals", "Interior", "Thieves Guild", "Riften", "JK's Series"]
+    },
+    "JK's Sky Haven Temple": {
+      "summary": "Transforms Sky Haven Temple into a properly grand Blades headquarters with ancient Akaviri splendor.",
+      "category": "Visuals",
+      "author": "Jkrojmal",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/33950",
+      "nexusId": 33950,
+      "tags": ["Visuals", "Interior", "Blades", "JK's Series"]
+    },
+    "JK's Jorrvaskr": {
+      "summary": "Overhauls the Companions' hall with proper mead hall grandeur and warrior culture aesthetics.",
+      "category": "Visuals",
+      "author": "Jkrojmal",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/27503",
+      "nexusId": 27503,
+      "tags": ["Visuals", "Interior", "Companions", "Whiterun", "JK's Series"]
+    },
+    "Cities of the North - Dawnstar": {
+      "summary": "Overhauls Dawnstar into a proper northern mining and fishing town with new buildings, NPC routines, and atmospheric detail.",
+      "category": "Visuals",
+      "author": "JPSteel2",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/28952",
+      "nexusId": 28952,
+      "tags": ["Visuals", "City", "Dawnstar", "COTN Series"]
+    },
+    "Cities of the North - Falkreath": {
+      "summary": "Overhauls Falkreath into a dense logging and funeral town, fitting for a settlement built around Skyrim's largest cemetery.",
+      "category": "Visuals",
+      "author": "JPSteel2",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/56731",
+      "nexusId": 56731,
+      "tags": ["Visuals", "City", "Falkreath", "COTN Series"]
+    },
+    "Cities of the North - Morthal": {
+      "summary": "Overhauls Morthal into a proper swamp town — misty, eerie, and more populated. Fits the Hjaalmarch hold's sinister atmosphere.",
+      "category": "Visuals",
+      "author": "JPSteel2",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/34168",
+      "nexusId": 34168,
+      "tags": ["Visuals", "City", "Morthal", "COTN Series"]
+    },
+    "Cities of the North - Winterhold": {
+      "summary": "Overhauls the ruins of Winterhold with the feel of a once-great city reduced to a shadow of its former self — haunting but with more to explore.",
+      "category": "Visuals",
+      "author": "JPSteel2",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/50537",
+      "nexusId": 50537,
+      "tags": ["Visuals", "City", "Winterhold", "COTN Series"]
+    },
+    "Capital Whiterun Expansion": {
+      "summary": "Expands Whiterun with new districts, buildings, and population. Makes the hold capital feel like Skyrim's most important city.",
+      "category": "Visuals",
+      "author": "SirJesto",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/42307",
+      "nexusId": 42307,
+      "tags": ["Visuals", "City", "Whiterun", "Expansion"]
+    },
+    "Capital Windhelm Expansion": {
+      "summary": "Expands Windhelm with new buildings and districts, making the ancient Nord city feel like a proper northern capital.",
+      "category": "Visuals",
+      "author": "SirJesto",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/41451",
+      "nexusId": 41451,
+      "tags": ["Visuals", "City", "Windhelm", "Expansion"]
+    },
+    "GG's Thieves Guild Headquarters": {
+      "summary": "Dramatically expands the Thieves Guild headquarters in the Ratway with new rooms, facilities, and atmosphere appropriate for a criminal organization of that scale.",
+      "category": "Visuals",
+      "author": "GG77",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/76531",
+      "nexusId": 76531,
+      "tags": ["Visuals", "Interior", "Thieves Guild", "Riften"]
+    },
+    "SKY CITY - Markarth Rising": {
+      "summary": "Massively expands Markarth by adding upper districts carved into the cliffs above the city. Makes the Reach's capital feel like the enormous Dwemer structure it should be.",
+      "category": "Visuals",
+      "author": "Elianora",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/22988",
+      "nexusId": 22988,
+      "tags": ["Visuals", "City", "Markarth", "Expansion"]
+    },
+    "Riften Docks Overhaul": {
+      "summary": "Overhauls Riften's lakeside docks with more boats, fisheries, and maritime activity. Makes the docks feel like the working waterfront of a trade city.",
+      "category": "Visuals",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/50045",
+      "nexusId": 50045,
+      "tags": ["Visuals", "City", "Riften", "Docks"]
+    },
+    "The Great City of Solitude SSE": {
+      "summary": "Expands Solitude with new districts, buildings, and more life in Skyrim's grand capital city. Part of The Great Cities series.",
+      "category": "Visuals",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/20695",
+      "nexusId": 20695,
+      "tags": ["Visuals", "City", "Solitude", "Expansion"]
+    },
+    "The Great Town of Ivarstead SSE": {
+      "summary": "Expands Ivarstead into a proper town at the base of the Throat of the World — more buildings, more NPCs, more reason to visit.",
+      "category": "Visuals",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/34505",
+      "nexusId": 34505,
+      "tags": ["Visuals", "Town", "Ivarstead", "Expansion"]
+    },
+    "The Great Town of Shor's Stone SSE": {
+      "summary": "Expands Shor's Stone from a tiny hamlet into a proper mining town with more buildings and NPCs.",
+      "category": "Visuals",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/35503",
+      "nexusId": 35503,
+      "tags": ["Visuals", "Town", "Expansion"]
+    },
+    "The Great Village of Kynesgrove": {
+      "summary": "Expands Kynesgrove from a tiny inn stop into a proper village with homes, workers, and atmosphere.",
+      "category": "Visuals",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/36462",
+      "nexusId": 36462,
+      "tags": ["Visuals", "Village", "Eastmarch", "Expansion"]
+    },
+    "The Great Village of Old Hroldan SSE": {
+      "summary": "Transforms Old Hroldan inn into a proper historical landmark village with more buildings and lore-appropriate atmosphere.",
+      "category": "Visuals",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/33189",
+      "nexusId": 33189,
+      "tags": ["Visuals", "Village", "Reach", "Expansion"]
+    },
+    "The Great Town of Karthwasten SSE": {
+      "summary": "Expands the silver mining settlement of Karthwasten into a proper working town with more homes and infrastructure.",
+      "category": "Visuals",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/33032",
+      "nexusId": 33032,
+      "tags": ["Visuals", "Town", "The Reach", "Expansion"]
+    },
+    "JK's Riverwood": {
+      "summary": "Overhauls Riverwood's shops, homes, and public spaces. Part of JK's Exteriors series, which also includes patches for compatibility.",
+      "category": "Visuals",
+      "author": "Jkrojmal",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/24875",
+      "nexusId": 24875,
+      "tags": ["Visuals", "Town", "Riverwood", "JK's Series"]
+    },
+    "Nightgate Inn Revived": {
+      "summary": "Transforms the Nightgate Inn from a forgotten roadside stop into a proper, atmospheric refuge in Skyrim's frozen northern reaches.",
+      "category": "Visuals",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/37428",
+      "nexusId": 37428,
+      "tags": ["Visuals", "Inn", "Immersion"]
+    },
+    "Stendarr Rising - The Hall of the Vigilant Rebuild": {
+      "summary": "Rebuilds the Hall of the Vigilant as a proper fortified outpost before the Dawnguard attack. Also adds a new Hall of the Vigilant location post-questline.",
+      "category": "Visuals",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/49346",
+      "nexusId": 49346,
+      "tags": ["Visuals", "Location", "Vigilant", "Dawnguard"]
+    },
+    "Audio Overhaul for Skyrim": {
+      "summary": "Comprehensive audio overhaul touching hundreds of sounds — footsteps, weapon impacts, magic effects, ambient noise, and more. Makes combat sound powerful and the world feel alive. Core audio mod for LoreRim.",
+      "category": "Audio",
+      "author": "David Jegre",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/12466",
+      "nexusId": 12466,
+      "tags": ["Audio", "Sound", "Combat", "Ambient", "Core Audio"]
+    },
+    "Immersive Sounds - Compendium": {
+      "summary": "High-quality sound replacements for weapons, armor, magic, and movement. Works alongside Audio Overhaul for a complete sonic experience. Combat sounds have genuine weight.",
+      "category": "Audio",
+      "author": "lazygecko",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/523",
+      "nexusId": 523,
+      "tags": ["Audio", "Sound", "Combat", "Weapons", "Core Audio"]
+    },
+    "Regional Sounds Expansion": {
+      "summary": "Adds region-specific ambient sounds to wilderness, dungeons, and towns. The tundra sounds different from the Reach; dungeons have their own audio signature.",
+      "category": "Audio",
+      "author": "clofas1",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/77540",
+      "nexusId": 77540,
+      "tags": ["Audio", "Ambient", "Immersion"]
+    },
+    "Reverb Interior Sounds Expansion": {
+      "summary": "Adds proper reverb and echo to indoor spaces. Dungeons echo, caves boom, small rooms sound intimate. Massive atmospheric improvement.",
+      "category": "Audio",
+      "author": "clofas1",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/10216",
+      "nexusId": 10216,
+      "tags": ["Audio", "Ambient", "Interior", "Immersion"]
+    },
+    "BA Bard Songs": {
+      "summary": "Adds new bard songs to taverns and inns throughout Skyrim, expanding the vanilla selection dramatically. Bards finally feel like real entertainers.",
+      "category": "Audio",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/47202",
+      "nexusId": 47202,
+      "tags": ["Audio", "Music", "Bards", "Immersion"]
+    },
+    "Thundering Shouts Loose files": {
+      "summary": "Replaces shout sound effects with powerful, resonant versions that feel appropriately divine in scale. Shouting finally sounds as epic as it should.",
+      "category": "Audio",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/14352",
+      "nexusId": 14352,
+      "tags": ["Audio", "Shouts", "Dragon", "Power"]
+    },
+    "Airgetlam - Shouts SFX": {
+      "summary": "Alternative shout sound replacement with distinctive effects for each shout type. Works alongside Thundering Shouts for comprehensive shout audio.",
+      "category": "Audio",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/35719",
+      "nexusId": 35719,
+      "tags": ["Audio", "Shouts", "Sound FX"]
+    },
+    "Yggdrasil SoundFX": {
+      "summary": "Immersive ambient soundscape overhaul with nature sounds, wind variations, and environmental audio that changes by region and time of day.",
+      "category": "Audio",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/21578",
+      "nexusId": 21578,
+      "tags": ["Audio", "Ambient", "Nature", "Immersion"]
+    },
+    "Nyghtfall - Dark Fantasy Music": {
+      "summary": "A new music mod adding dark fantasy tracks that blend seamlessly with Skyrim's atmosphere. Expands the music rotation for exploration and dungeon crawling.",
+      "category": "Audio",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/56132",
+      "nexusId": 56132,
+      "tags": ["Audio", "Music", "Dark Fantasy", "Atmosphere"]
+    },
+    "LORKHAN - Soundtrack Replacer": {
+      "summary": "Replaces portions of Skyrim's soundtrack with dark, moody music fitting LoreRim's tone.",
+      "category": "Audio",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/54586",
+      "nexusId": 54586,
+      "tags": ["Audio", "Music", "Soundtrack"]
+    },
+    "Wildwood Echoes": {
+      "summary": "Part of clofas1's ambient sound series — adds rich forest and wilderness soundscapes to outdoor areas.",
+      "category": "Audio",
+      "author": "clofas1",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/77559",
+      "nexusId": 77559,
+      "tags": ["Audio", "Ambient", "Forest", "Nature"]
+    },
+    "Wheeler - Quick Action Wheel Of Skyrim": {
+      "summary": "Adds a configurable radial action wheel for quick access to spells, items, shouts, and powers. Essential for LoreRim's complex builds — bind your combat rotation and consumables for fast access in combat.",
+      "category": "UI",
+      "author": "Ersh",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/55364",
+      "nexusId": 55364,
+      "tags": ["UI", "Combat", "Hotkey", "Quality of Life"]
+    },
+    "TrueHUD - HUD Additions": {
+      "summary": "Adds target health bars, boss health bars, player widget, and resource indicators to the HUD. Essential for understanding fight dynamics in Requiem's tough encounters.",
+      "category": "UI",
+      "author": "Ersh",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/62775",
+      "nexusId": 62775,
+      "tags": ["UI", "HUD", "Combat", "Target Info"]
+    },
+    "moreHUD SE": {
+      "summary": "Adds target information, item XP progress, and enemy health percentage to the HUD. More information means better decisions in Requiem.",
+      "category": "UI",
+      "author": "Ahzaab",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/12688",
+      "nexusId": 12688,
+      "tags": ["UI", "HUD", "Information"]
+    },
+    "SmoothCam": {
+      "summary": "Overhauls Skyrim's third-person camera with smooth interpolation, configurable offsets, and over-the-shoulder presets. LoreRim includes multiple presets — try each and pick your preference.",
+      "category": "UI",
+      "author": "mrowrpurr",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/41252",
+      "nexusId": 41252,
+      "tags": ["UI", "Camera", "Third Person", "Quality of Life"]
+    },
+    "CoMAP - Common Marker Addon Project": {
+      "summary": "Adds new map marker types for undiscovered locations, custom markers, and improved marker icons. Makes navigation and exploration tracking more informative.",
+      "category": "UI",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/56123",
+      "nexusId": 56123,
+      "tags": ["UI", "Map", "Navigation"]
+    },
+    "Detection Meter": {
+      "summary": "Adds a visual detection meter showing when NPCs are about to spot you. Essential for stealth gameplay — gives clear feedback on your detection risk.",
+      "category": "UI",
+      "author": "Parapets",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/63057",
+      "nexusId": 63057,
+      "tags": ["UI", "Stealth", "HUD", "Information"]
+    },
+    "Security Overhaul SKSE - Lock Variations": {
+      "summary": "Adds varied lock models for chests, doors, and containers based on faction and location. Different locks look and feel different throughout Skyrim.",
+      "category": "Visuals",
+      "author": "RealmFighter",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/58224",
+      "nexusId": 58224,
+      "tags": ["Visuals", "Objects", "Stealth", "Immersion"]
+    },
+    "Oblivion Interaction Icons": {
+      "summary": "Replaces the generic 'E to activate' prompt with context-sensitive icons showing the specific action — Open, Talk, Take, Search, etc.",
+      "category": "UI",
+      "author": "colinswrath",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/51150",
+      "nexusId": 51150,
+      "tags": ["UI", "HUD", "Quality of Life"]
+    },
+    "Custom Skills Framework": {
+      "summary": "Framework allowing mods to add entirely new skill trees visible in the skills menu. Used by several LoreRim mods to display custom progression systems.",
+      "category": "Framework",
+      "author": "Parapets",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/41780",
+      "nexusId": 41780,
+      "tags": ["Framework", "UI", "Skills", "Custom Skills"]
+    },
+    "PhotoMode": {
+      "summary": "Adds a photo mode — pause, adjust camera, change lighting, remove HUD, and take screenshots. Perfect for capturing LoreRim's beautiful visuals.",
+      "category": "UI",
+      "author": "Ersh",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/91701",
+      "nexusId": 91701,
+      "tags": ["UI", "Screenshot", "Quality of Life"]
+    },
+    "Bears of the North": {
+      "summary": "Replaces Skyrim's bear models with massive, realistic bears that look genuinely imposing. Brown bears, black bears, and cave bears all get unique models.",
+      "category": "Visuals",
+      "author": "T4gtr34um3r",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/47541",
+      "nexusId": 47542,
+      "tags": ["Visuals", "Creatures", "Animals", "Texture"]
+    },
+    "Fluffworks (Fluffy Animals)": {
+      "summary": "Adds realistic fur shaders and improved fur geometry to horses, wolves, foxes, dogs, and many other animals. Animals finally look like they have real fur.",
+      "category": "Visuals",
+      "author": "Cabal",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/56041",
+      "nexusId": 56041,
+      "tags": ["Visuals", "Animals", "Creatures", "Fur Shader"]
+    },
+    "Skeleton Replacer HD": {
+      "summary": "Replaces all skeleton enemies with high-detail mesh overhauls. Different skeleton types — draugr, ancient, and unique boss variants all get distinct looks.",
+      "category": "Visuals",
+      "author": "Kajuan",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/52845",
+      "nexusId": 52845,
+      "tags": ["Visuals", "Creatures", "Undead", "Mesh"]
+    },
+    "Dragons SE": {
+      "summary": "High-resolution dragon retextures with improved scale and wing details. Multiple dragon variants get distinct looks rather than sharing the same base texture.",
+      "category": "Visuals",
+      "author": "Kajuan",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/3685",
+      "nexusId": 3685,
+      "tags": ["Visuals", "Dragon", "Creatures", "Texture"]
+    },
+    "Draugrs - New models and textures": {
+      "summary": "Complete visual overhaul of all draugr types with higher-poly models and accurate tomb-wrapping detail. One of the most common enemy types finally looks the part.",
+      "category": "Visuals",
+      "author": "Kajuan",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/9842",
+      "nexusId": 9842,
+      "tags": ["Visuals", "Creatures", "Undead", "Draugr"]
+    },
+    "HAGRAVEN": {
+      "summary": "Complete hagraven visual overhaul with more detailed and disturbing models. Hagravens become properly unsettling again.",
+      "category": "Visuals",
+      "author": "Kajuan",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/13003",
+      "nexusId": 13003,
+      "tags": ["Visuals", "Creatures", "Forsworn"]
+    },
+    "MM - Real Skeevers": {
+      "summary": "Replaces skeever models with realistic rat-like rodents that look genuinely plague-ridden and dangerous.",
+      "category": "Visuals",
+      "author": "Mihail",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/46912",
+      "nexusId": 46912,
+      "tags": ["Visuals", "Creatures", "Animals"]
+    },
+    "Falmer Overhaul - New models and textures": {
+      "summary": "Replaces Falmer models with more detailed, disturbing versions that better convey their de-evolved horror.",
+      "category": "Visuals",
+      "author": "Kajuan",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/9856",
+      "nexusId": 9856,
+      "tags": ["Visuals", "Creatures", "Falmer", "Dwemer"]
+    },
+    "CBBE 3BA (3BBB)": {
+      "summary": "Advanced female body physics mesh for Skyrim SE. Required by most 3BA-tagged armor conversions in LoreRim's wardrobe.",
+      "category": "Framework",
+      "author": "Acro",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/30174",
+      "nexusId": 30174,
+      "tags": ["Framework", "Body", "Physics", "Character"]
+    },
+    "Caliente's Beautiful Bodies Enhancer -CBBE-": {
+      "summary": "The foundational female body replacer for Skyrim SE. Base mesh required by all CBBE-tagged clothing, armor, and related mods in LoreRim.",
+      "category": "Framework",
+      "author": "Caliente",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/198",
+      "nexusId": 198,
+      "tags": ["Framework", "Body", "Character", "Required"]
+    },
+    "High Poly Head SE": {
+      "summary": "Replaces vanilla NPC and player head meshes with high-polygon versions for dramatically improved facial geometry. Required for many character presets in LoreRim.",
+      "category": "Visuals",
+      "author": "KouLeifoh",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/44327",
+      "nexusId": 44327,
+      "tags": ["Visuals", "Character", "Face", "Mesh"]
+    },
+    "Expressive Facegen Morphs SE": {
+      "summary": "Unlocks many face morph options hidden in the vanilla game, allowing far more expressive and diverse character faces.",
+      "category": "Visuals",
+      "author": "Niroku",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/35785",
+      "nexusId": 35785,
+      "tags": ["Visuals", "Character", "Face", "Customization"]
+    },
+    "Expressive Facial Animation - Female Edition": {
+      "summary": "Replaces female NPC facial animation rigs with more expressive, nuanced versions. Emotional states and conversations feel more natural.",
+      "category": "Visuals",
+      "author": "Niroku",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/19181",
+      "nexusId": 19181,
+      "tags": ["Visuals", "Animation", "NPC", "Face"]
+    },
+    "Expressive Facial Animation - Male Edition": {
+      "summary": "Same as the female edition but for male NPCs — more expressive faces and natural emotional reactions during dialogue.",
+      "category": "Visuals",
+      "author": "Niroku",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/19532",
+      "nexusId": 19532,
+      "tags": ["Visuals", "Animation", "NPC", "Face"]
+    },
+    "Ancient Dwemer Metal": {
+      "summary": "High-quality metal retexture for all Dwemer architecture and objects — gates, pipes, cogs, and constructs. Dramatically improves Dwemer ruins.",
+      "category": "Visuals",
+      "author": "Xtudo",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/38845",
+      "nexusId": 38845,
+      "tags": ["Visuals", "Dwemer", "Metal", "Texture"]
+    },
+    "Vanaheimr - Landscapes": {
+      "summary": "Comprehensive landscape texture overhaul covering dirt, snow, stone, and ground cover across all of Skyrim. High-quality replacements with parallax support.",
+      "category": "Visuals",
+      "author": "Pfuscher",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/78780",
+      "nexusId": 78780,
+      "tags": ["Visuals", "Landscape", "Texture", "Ground"]
+    },
+    "Enhanced Rocks and Mountains": {
+      "summary": "High-resolution texture overhaul for all rocks and mountain surfaces. Detailed normal maps and parallax support make terrain surfaces look dimensional.",
+      "category": "Visuals",
+      "author": "DynDOLOD Team",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/73378",
+      "nexusId": 73378,
+      "tags": ["Visuals", "Landscape", "Rocks", "Mountains"]
+    },
+    "Windhelm - Icy Windhelm": {
+      "summary": "Adds ice and snow to Windhelm's surfaces, making the ancient Nord city look properly frozen in the harsh northern climate.",
+      "category": "Visuals",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/55629",
+      "nexusId": 55629,
+      "tags": ["Visuals", "City", "Windhelm", "Snow"]
+    },
+    "Cabbage ENB - Lore Cut": {
+      "summary": "LoreRim's default ENB preset — cinematic lighting with accurate color temperatures and strong ambient occlusion. Designed to complement Northern Roads and LoreRim's visual suite.",
+      "category": "Visuals",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/50365",
+      "nexusId": 50365,
+      "tags": ["Visuals", "ENB", "Lighting", "Post Processing"]
+    },
+    "Rudy HQ - Miscellaneous SE": {
+      "summary": "High-quality texture replacements for various miscellaneous objects — candles, pots, dishes, and other small items throughout Skyrim.",
       "category": "Visuals",
       "author": "Rudy102",
-      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/4796",
-      "nexusId": 4796,
-      "tags": ["ENB", "Visuals", "Post-Processing"]
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/19770",
+      "nexusId": 19770,
+      "tags": ["Visuals", "Texture", "Objects", "Clutter"]
+    },
+    "Snazzy Interiors": {
+      "summary": "Part of the Snazzy Interiors series — comprehensive interior overhauls for major Skyrim cities. Each location gets themed furniture, decorations, and improved layouts.",
+      "category": "Visuals",
+      "author": "Jkrojmal",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/76257",
+      "nexusId": 76257,
+      "tags": ["Visuals", "Interior", "City", "Snazzy Series"]
+    },
+    "Environs - The Ruined Tundra Farmhouse": {
+      "summary": "Part of the Environs series — adds detail and story to ruined tundra farmhouses, giving abandoned places a sense of history.",
+      "category": "Visuals",
+      "author": "JPSteel2",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/37801",
+      "nexusId": 37801,
+      "tags": ["Visuals", "Location", "Tundra", "Environs Series"]
+    },
+    "Environs - Kolskeggr": {
+      "summary": "Part of the Environs series — overhauls Kolskeggr mine and surrounding area with more detail and atmosphere.",
+      "category": "Visuals",
+      "author": "JPSteel2",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/34840",
+      "nexusId": 34840,
+      "tags": ["Visuals", "Location", "Mine", "Environs Series"]
+    },
+    "Ryn's Standing Stones": {
+      "summary": "Part of Ryn's location overhaul series — redesigns all Standing Stone sites with unique architecture and environmental storytelling.",
+      "category": "Visuals",
+      "author": "Ryn",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/44592",
+      "nexusId": 44592,
+      "tags": ["Visuals", "Standing Stones", "Location", "Ryn's Series"]
+    },
+    "Ryn's Dragon Mounds Collection": {
+      "summary": "Part of Ryn's series — overhauls dragon burial mounds with more imposing and atmospheric designs.",
+      "category": "Visuals",
+      "author": "Ryn",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/46367",
+      "nexusId": 46367,
+      "tags": ["Visuals", "Dragon", "Location", "Ryn's Series"]
+    },
+    "Ryn's Saarthal": {
+      "summary": "Overhauls Saarthal — the ancient Nord burial site and College quest location — with more impressive scale and detail.",
+      "category": "Visuals",
+      "author": "Ryn",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/49330",
+      "nexusId": 49330,
+      "tags": ["Visuals", "Dungeon", "Ancient Nord", "Ryn's Series"]
+    },
+    "Ruins Clutter Improved SE": {
+      "summary": "Improves the clutter, pottery, and small objects found in Nordic ruins. More variety and higher quality across all dungeon environments.",
+      "category": "Visuals",
+      "author": "Nsk13",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/5870",
+      "nexusId": 5870,
+      "tags": ["Visuals", "Dungeon", "Objects", "Clutter"]
+    },
+    "Book Covers Skyrim": {
+      "summary": "Replaces all 820 in-game books with unique cover art matching each book's title and content. Dramatically improves the feel of libraries and loot.",
+      "category": "Visuals",
+      "author": "DanielCoffey",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/901",
+      "nexusId": 901,
+      "tags": ["Visuals", "Books", "Objects", "Lore"]
+    },
+    "ElSopa - Potions Redone": {
+      "summary": "Replaces all potion bottles with distinct, hand-crafted 3D models for each potion type. No more identical bottles with different labels.",
+      "category": "Visuals",
+      "author": "ElSopa",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/32505",
+      "nexusId": 32505,
+      "tags": ["Visuals", "Potions", "Objects", "3D Model"]
+    },
+    "Praedy's Staves AIO": {
+      "summary": "Complete visual overhaul for all staves in Skyrim. Each staff type has a unique, high-quality model. Essential for any staff-wielding mage build.",
+      "category": "Visuals",
+      "author": "Praedy",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/58728",
+      "nexusId": 58728,
+      "tags": ["Visuals", "Weapons", "Staves", "Magic"]
+    },
+    "JS Dragon Claws AE Anniversary Edition": {
+      "summary": "High-quality replacements for all dragon claw puzzle keys. Each claw has a unique, detailed model matching its namesake dragon.",
+      "category": "Visuals",
+      "author": "johnskyrim",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/57804",
+      "nexusId": 57804,
+      "tags": ["Visuals", "Objects", "Puzzle", "3D Model"]
+    },
+    "JS Shrines of the Divines SE": {
+      "summary": "Replaces all shrine models with intricately detailed versions for each of the Nine Divines. Shrines become proper objects of reverence.",
+      "category": "Visuals",
+      "author": "johnskyrim",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/38713",
+      "nexusId": 38713,
+      "tags": ["Visuals", "Objects", "Religion", "Shrine"]
+    },
+    "Gemling Queen Jewelry SE": {
+      "summary": "High-resolution retextures for all jewelry in Skyrim — rings, necklaces, and circlets with proper gem rendering and metalwork.",
+      "category": "Visuals",
+      "author": "Mindflux",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/4294",
+      "nexusId": 4294,
+      "tags": ["Visuals", "Jewelry", "Character", "Texture"]
+    },
+    "Happy Little Trees": {
+      "summary": "Overhauls tree meshes throughout Skyrim with fuller, more natural-looking canopies. Dramatic improvement to forested areas without significant performance cost.",
+      "category": "Visuals",
+      "author": "Hein84",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/50961",
+      "nexusId": 50961,
+      "tags": ["Visuals", "Trees", "Nature"]
+    },
+    "Animated Ships": {
+      "summary": "Adds animated sails and rigging to ships in Skyrim's ports and seas. Ships look alive in the water instead of static props.",
+      "category": "Visuals",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/39586",
+      "nexusId": 39586,
+      "tags": ["Visuals", "Animation", "Ships", "World"]
+    },
+    "Simple Follower Framework": {
+      "summary": "Lightweight follower management framework — dismiss, teleport, and manage followers without bloat. Compatible with custom-voiced followers.",
+      "category": "Gameplay",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/55983",
+      "nexusId": 55983,
+      "tags": ["Followers", "Framework", "Quality of Life"]
+    },
+    "Press E to Heal Followers": {
+      "summary": "Allows healing downed followers with a button press instead of using restoration spells manually. Makes follower management less frustrating in tough fights.",
+      "category": "Gameplay",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/75236",
+      "nexusId": 75236,
+      "tags": ["Followers", "Quality of Life", "Combat"]
+    },
+    "Simple Outfit System": {
+      "summary": "Allows setting follower outfit profiles that persist through inventory changes. Followers stay dressed how you want without constant micromanagement.",
+      "category": "Gameplay",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/48974",
+      "nexusId": 48974,
+      "tags": ["Followers", "Outfit", "Quality of Life"]
+    },
+    "Swiftly Order Squad - Follower Commands UI": {
+      "summary": "Quick-access command wheel for followers — wait, follow, sneak, combat, etc. Makes managing multiple followers smooth without menu diving.",
+      "category": "UI",
+      "author": "Various",
+      "nexusUrl": "https://www.nexusmods.com/skyrimspecialedition/mods/63267",
+      "nexusId": 63267,
+      "tags": ["Followers", "UI", "Commands", "Quality of Life"]
     }
   }
 }

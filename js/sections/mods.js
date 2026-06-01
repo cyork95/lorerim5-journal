@@ -195,6 +195,9 @@ async function importMO2List() {
   const existingNames = new Set(window.appState.mods.map(m=>m.name.toLowerCase()));
 
   for (const line of lines) {
+    // Skip comment lines and MO2 separator entries
+    if (line.startsWith('#') || /_separator\s*$/i.test(line)) continue;
+
     let name = line
       .replace(/^[+\-\*]\s*/, '')
       .replace(/\s*[\[(][^\])]*[\])]$/g, '')
