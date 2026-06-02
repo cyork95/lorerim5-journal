@@ -2,8 +2,14 @@
 
 let activeJournalId = null;
 let journalTagFilter = null;
+let journalSearch = '';
 
 function renderJournal() {
+  // Pick up a pending open-on-navigate (e.g. from level-up nudge)
+  if (window._pendingJournalId) {
+    activeJournalId = window._pendingJournalId;
+    delete window._pendingJournalId;
+  }
   const entries = window.appState.journal;
   const allTags = [...new Set(entries.flatMap(e => e.tags))].sort();
 
@@ -22,6 +28,13 @@ function renderJournal() {
       <div style="display:flex;gap:0.5rem;margin-bottom:0.75rem;">
         <button class="btn btn-primary" style="flex:1;justify-content:center;" onclick="newJournalEntry()">+ New Entry</button>
         <button class="btn btn-sm" onclick="exportJournalPDF()" title="Export to PDF">📄</button>
+      </div>
+
+      <!-- Search -->
+      <div style="margin-bottom:0.6rem;">
+        <input class="input" id="journal-search" value="${esc(journalSearch)}"
+          placeholder="🔍 Search entries…" oninput="setJournalSearch(this.value)"
+          style="font-size:0.82rem;">
       </div>
 
       <!-- Tag filter -->
@@ -46,17 +59,27 @@ function renderJournal() {
 }
 
 function renderEntryList(entries) {
-  const filtered = journalTagFilter
+  let filtered = journalTagFilter
     ? entries.filter(e => e.tags.includes(journalTagFilter))
     : entries;
+
+  if (journalSearch.trim()) {
+    const q = journalSearch.trim().toLowerCase();
+    filtered = filtered.filter(e =>
+      (e.title || '').toLowerCase().includes(q) ||
+      (e.content || '').toLowerCase().includes(q)
+    );
+  }
+
   const sorted = [...filtered].sort((a,b) => b.date.localeCompare(a.date));
-  if (!sorted.length) return `<div style="color:#555;font-style:italic;font-size:0.85rem;padding:0.5rem;">No entries yet.</div>`;
+  if (!sorted.length) return `<div style="color:#555;font-style:italic;font-size:0.85rem;padding:0.5rem;">${journalSearch ? 'No entries match your search.' : 'No entries yet.'}</div>`;
   return sorted.map(e => `
     <div class="journal-card ${activeJournalId===e.id?'active':''}" onclick="openJournalEntry('${e.id}')">
       <div class="journal-date">${formatDate(e.date)}</div>
       <div class="journal-title">${esc(e.title) || '<em style="color:#555">Untitled</em>'}</div>
-      <div style="margin-top:0.3rem;display:flex;flex-wrap:wrap;gap:0.25rem;">
+      <div style="margin-top:0.3rem;display:flex;flex-wrap:wrap;gap:0.25rem;align-items:center;">
         ${e.tags.map(t=>`<span class="tag" style="font-size:0.5rem;">${esc(t)}</span>`).join('')}
+        ${e.image ? '<span style="font-size:0.6rem;color:rgba(212,168,67,0.4);margin-left:auto;" title="Has screenshot">📷</span>' : ''}
       </div>
     </div>`).join('');
 }
@@ -70,6 +93,14 @@ function renderEditorEmpty() {
 
 function renderEditor(entry) {
   if (!entry) return renderEditorEmpty();
+  const imgHtml = entry.image
+    ? `<div style="margin-bottom:0.5rem;position:relative;">
+         <img src="${entry.image}" alt="screenshot" style="max-width:100%;max-height:220px;border-radius:4px;border:1px solid rgba(212,168,67,0.15);object-fit:cover;">
+         <button class="btn btn-sm btn-danger" onclick="removeEntryImage('${entry.id}')"
+           style="position:absolute;top:0.35rem;right:0.35rem;padding:0.15rem 0.4rem;font-size:0.65rem;">✕</button>
+       </div>`
+    : '';
+
   return `
   <div class="card">
     <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.75rem;gap:0.75rem;">
@@ -88,9 +119,22 @@ function renderEditor(entry) {
       <input class="input" id="entry-tags" value="${entry.tags.join(', ')}" placeholder="e.g. Whiterun, Main Quest, Combat">
     </div>
 
+    <!-- Screenshot attachment -->
+    <div style="margin-bottom:0.75rem;">
+      <label class="field-label">Screenshot <span style="color:#555;font-style:italic;font-weight:normal;font-family:'EB Garamond',serif;">(optional)</span></label>
+      ${imgHtml}
+      <div style="display:flex;gap:0.5rem;">
+        <button class="btn btn-sm" onclick="document.getElementById('entry-img-upload').click()">
+          📷 ${entry.image ? 'Replace' : 'Attach Screenshot'}
+        </button>
+      </div>
+      <input type="file" id="entry-img-upload" accept="image/*" style="display:none"
+        onchange="handleEntryImageUpload(this,'${entry.id}')">
+    </div>
+
     <div style="margin-bottom:0.75rem;">
       <label class="field-label">✦ Journal Entry</label>
-      <textarea class="textarea" id="entry-content" rows="18" placeholder="Write your chronicle here…\n\nLet the quill speak of deeds done, dangers faced, and secrets uncovered in this land of cold winds and ancient stone.">${esc(entry.content)}</textarea>
+      <textarea class="textarea" id="entry-content" rows="16" placeholder="Write your chronicle here…\n\nLet the quill speak of deeds done, dangers faced, and secrets uncovered in this land of cold winds and ancient stone.">${esc(entry.content)}</textarea>
     </div>
 
     <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
@@ -101,9 +145,14 @@ function renderEditor(entry) {
   </div>`;
 }
 
+function setJournalSearch(val) {
+  journalSearch = val;
+  document.getElementById('entry-list').innerHTML = renderEntryList(window.appState.journal);
+}
+
 function newJournalEntry() {
   const id = generateId();
-  const entry = { id, date: todayISO(), title: '', content: '', tags: [] };
+  const entry = { id, date: todayISO(), title: '', content: '', tags: [], image: null };
   window.appState.journal.unshift(entry);
   saveState();
   activeJournalId = id;
@@ -125,7 +174,6 @@ function saveJournalEntry() {
   const rawTags = document.getElementById('entry-tags')?.value || '';
   entry.tags = rawTags.split(',').map(t=>t.trim()).filter(Boolean);
   saveState();
-  // Refresh list without closing editor
   document.getElementById('entry-list').innerHTML = renderEntryList(window.appState.journal);
   showToast('Entry saved.');
 }
@@ -143,12 +191,37 @@ function filterJournalTag(tag) {
   renderJournal();
 }
 
+function handleEntryImageUpload(input, entryId) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    const entry = window.appState.journal.find(e => e.id === entryId);
+    if (!entry) return;
+    entry.image = ev.target.result;
+    saveState();
+    // Re-render editor panel only
+    const panel = document.getElementById('journal-editor-panel');
+    if (panel) panel.innerHTML = renderEditor(entry);
+  };
+  reader.readAsDataURL(file);
+}
+
+function removeEntryImage(entryId) {
+  const entry = window.appState.journal.find(e => e.id === entryId);
+  if (!entry) return;
+  entry.image = null;
+  saveState();
+  const panel = document.getElementById('journal-editor-panel');
+  if (panel) panel.innerHTML = renderEditor(entry);
+}
+
 function countWords(text) {
   if (!text) return 0;
   return text.trim().split(/\s+/).filter(Boolean).length;
 }
 
-function showToast(msg) {
+function showToast(msg, action) {
   let toast = document.getElementById('toast');
   if (!toast) {
     toast = document.createElement('div');
@@ -158,12 +231,12 @@ function showToast(msg) {
       background:#1a1a22;border:1px solid rgba(212,168,67,0.4);
       color:#d4a843;font-family:'Cinzel',serif;font-size:0.68rem;
       letter-spacing:0.08em;padding:0.6rem 1rem;border-radius:3px;
-      z-index:9999;transition:opacity 0.3s;`;
+      z-index:9999;transition:opacity 0.3s;display:flex;align-items:center;gap:0.75rem;`;
     document.body.appendChild(toast);
   }
-  toast.textContent = msg;
+  toast.innerHTML = esc(msg) + (action ? `<button onclick="${action.fn}()" style="background:rgba(212,168,67,0.15);border:1px solid rgba(212,168,67,0.3);color:#d4a843;font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.06em;padding:0.25rem 0.6rem;border-radius:2px;cursor:pointer;">${esc(action.label)}</button>` : '');
   toast.style.opacity = '1';
   clearTimeout(window._toastTimer);
-  window._toastTimer = setTimeout(() => { toast.style.opacity = '0'; }, 2200);
+  window._toastTimer = setTimeout(() => { toast.style.opacity = '0'; }, action ? 5000 : 2200);
 }
 window.showToast = showToast;

@@ -100,6 +100,14 @@ function renderDashboard() {
       <span class="stat-pill-value">${window.appState.journal.length}</span>
       <span class="stat-pill-label">Journal Entries</span>
     </div>
+    <div class="stat-pill">
+      <span class="stat-pill-value" style="color:#c07070;">${(window.appState.deaths||[]).length}</span>
+      <span class="stat-pill-label">Deaths</span>
+    </div>
+    <div class="stat-pill">
+      <span class="stat-pill-value" style="font-size:0.8rem;">${formatDuration(totalPlayMinutes())}</span>
+      <span class="stat-pill-label">Playtime Logged</span>
+    </div>
   </div>
 
   <!-- Backstory -->
@@ -148,6 +156,7 @@ function renderDashboard() {
 
 function saveDashboard() {
   const s = window.appState;
+  const prevLevel = s.character.level;
   s.character.name      = document.getElementById('char-name')?.value || '';
   s.character.race      = document.getElementById('char-race')?.value || '';
   s.character.level     = parseInt(document.getElementById('char-level')?.value) || 1;
@@ -155,7 +164,29 @@ function saveDashboard() {
   s.character.archetype = document.getElementById('char-archetype')?.value || '';
   s.character.backstory = document.getElementById('char-backstory')?.value || '';
   saveState();
+
+  // Level-up nudge
+  if (s.character.level > prevLevel) {
+    showToast(`⬆ Level ${s.character.level}! Chronicle this milestone?`, { label: 'Write Entry', fn: '_levelUpJournalEntry' });
+  }
+
+  // Update header name live
+  const nameEl = document.getElementById('header-char-name');
+  if (nameEl && s.character.name) nameEl.textContent = s.character.name;
 }
+
+function _levelUpJournalEntry() {
+  // Pre-fill a new journal entry titled for the level-up
+  const id = generateId();
+  const lvl = window.appState.character.level;
+  const entry = { id, date: todayISO(), title: `Level ${lvl} — `, content: '', tags: ['Level Up'], image: null };
+  window.appState.journal.unshift(entry);
+  saveState();
+  // Navigate to journal with this entry open
+  window._pendingJournalId = id;
+  navigate('journal');
+}
+window._levelUpJournalEntry = _levelUpJournalEntry;
 
 function handlePortraitUpload(e) {
   const file = e.target.files[0];
@@ -181,6 +212,10 @@ function countCompletedQuests() {
 function countTotalSpells() {
   const m = window.appState.magic;
   return Object.values(m).reduce((sum, arr) => sum + arr.length, 0);
+}
+
+function totalPlayMinutes() {
+  return (window.appState.sessions || []).reduce((sum, s) => sum + (s.durationMinutes || 0), 0);
 }
 
 function esc(str) {

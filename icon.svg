@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <rect width="192" height="192" fill="#0d0d10"/>
+  <rect x="8" y="8" width="176" height="176" fill="none" stroke="#d4a843" stroke-width="3" rx="8"/>
+  <!-- Sword blade -->
+  <rect x="94" y="20" width="4" height="110" fill="#d4cfc4" rx="2"/>
+  <!-- Crossguard -->
+  <rect x="72" y="110" width="48" height="8" fill="#d4a843" rx="2"/>
+  <!-- Grip -->
+  <rect x="93" y="118" width="6" height="32" fill="#8a7050" rx="2"/>
+  <!-- Pommel -->
+  <ellipse cx="96" cy="155" rx="8" ry="7" fill="#d4a843"/>
+  <!-- Sword tip -->
+  <polygon points="94,20 98,20 96,8" fill="#d4cfc4"/>
+  <!-- Stars -->
+  <text x="20" y="50" font-size="14" fill="rgba(212,168,67,0.5)">✦</text>
+  <text x="158" y="50" font-size="14" fill="rgba(212,168,67,0.5)">✦</text>
+</svg>

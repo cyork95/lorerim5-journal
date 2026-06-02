@@ -1,6 +1,8 @@
 /* ── LoreRim V — State Management ────────────────────────────────── */
 
-const STORAGE_KEY = 'lorerim5_state';
+const STORAGE_KEY   = 'lorerim5_state';    // legacy key (migration only)
+const CHARS_KEY     = 'lorerim5_characters';
+const ACTIVE_KEY    = 'lorerim5_active_char';
 
 const DEFAULT_STATE = {
   character: {
@@ -13,11 +15,17 @@ const DEFAULT_STATE = {
     portraitDataUrl: ''
   },
   siteConfig: {
-    notebookLmUrl: '',   // Public NotebookLM share link — shown in sidebar when set
+    notebookLmUrl: '',
   },
 
   journal: [],
-  // each entry: { id, date, title, content, tags: [] }
+  // each entry: { id, date, title, content, tags: [], image: null }
+
+  deaths: [],
+  // each: { id, date, enemy, location, level, cause, notes }
+
+  sessions: [],
+  // each: { id, date, durationMinutes }
 
   quests: {
     mainQuest: [
@@ -87,7 +95,6 @@ const DEFAULT_STATE = {
     alteration: [],
     restoration: []
   },
-  // each spell: { id, name, tier, notes }
 
   equipment: {
     head:      { name: '', enchantment: '', notes: '' },
@@ -102,7 +109,6 @@ const DEFAULT_STATE = {
   },
 
   mods: [],
-  // each mod: { id, name, category, enabled, notes }
 
   mechanics: {
     baseHealth: 100,
@@ -136,47 +142,47 @@ const DEFAULT_STATE = {
   ],
 
   artifacts: [
-    { id: 'art1',  name: 'Azura\'s Star',         type: 'Daedric',  icon: '⭐', collected: false, storageLocation: '', notes: '' },
-    { id: 'art2',  name: 'Black Star',             type: 'Daedric',  icon: '🌑', collected: false, storageLocation: '', notes: '' },
-    { id: 'art3',  name: 'Dawnbreaker',            type: 'Daedric',  icon: '⚔️',  collected: false, storageLocation: '', notes: '' },
-    { id: 'art4',  name: 'Ebony Blade',            type: 'Daedric',  icon: '🗡️',  collected: false, storageLocation: '', notes: '' },
-    { id: 'art5',  name: 'Ebony Mail',             type: 'Daedric',  icon: '🛡️',  collected: false, storageLocation: '', notes: '' },
-    { id: 'art6',  name: 'Mace of Molag Bal',      type: 'Daedric',  icon: '🔨', collected: false, storageLocation: '', notes: '' },
-    { id: 'art7',  name: 'Masque of Clavicus Vile',type: 'Daedric',  icon: '🎭', collected: false, storageLocation: '', notes: '' },
-    { id: 'art8',  name: 'Mehrunes\' Razor',       type: 'Daedric',  icon: '🔪', collected: false, storageLocation: '', notes: '' },
-    { id: 'art9',  name: 'Morokei (Staff)',        type: 'Daedric',  icon: '🪄', collected: false, storageLocation: '', notes: '' },
-    { id: 'art10', name: 'Namira\'s Ring',         type: 'Daedric',  icon: '💍', collected: false, storageLocation: '', notes: '' },
-    { id: 'art11', name: 'Oghma Infinium',         type: 'Daedric',  icon: '📕', collected: false, storageLocation: '', notes: '' },
-    { id: 'art12', name: 'Ring of Hircine',        type: 'Daedric',  icon: '🐺', collected: false, storageLocation: '', notes: '' },
-    { id: 'art13', name: 'Sanguine Rose',          type: 'Daedric',  icon: '🌹', collected: false, storageLocation: '', notes: '' },
-    { id: 'art14', name: 'Savior\'s Hide',         type: 'Daedric',  icon: '🧥', collected: false, storageLocation: '', notes: '' },
-    { id: 'art15', name: 'Skull of Corruption',   type: 'Daedric',  icon: '💀', collected: false, storageLocation: '', notes: '' },
-    { id: 'art16', name: 'Spellbreaker',           type: 'Daedric',  icon: '🛡️',  collected: false, storageLocation: '', notes: '' },
-    { id: 'art17', name: 'Volendrung',             type: 'Daedric',  icon: '⚒️',  collected: false, storageLocation: '', notes: '' },
-    { id: 'art18', name: 'Wabbajack',              type: 'Daedric',  icon: '🎪', collected: false, storageLocation: '', notes: '' },
-    { id: 'art19', name: 'Auriel\'s Bow',          type: 'Unique',   icon: '🏹', collected: false, storageLocation: '', notes: '' },
-    { id: 'art20', name: 'Auriel\'s Shield',       type: 'Unique',   icon: '🛡️',  collected: false, storageLocation: '', notes: '' },
-    { id: 'art21', name: 'Nightingale Bow',        type: 'Unique',   icon: '🏹', collected: false, storageLocation: '', notes: '' },
-    { id: 'art22', name: 'Nightingale Blade',      type: 'Unique',   icon: '🗡️',  collected: false, storageLocation: '', notes: '' },
-    { id: 'art23', name: 'Nightingale Armor',      type: 'Unique',   icon: '🧥', collected: false, storageLocation: '', notes: '' },
-    { id: 'art24', name: 'Konahrik',               type: 'Dragon Priest', icon: '👺', collected: false, storageLocation: '', notes: '' },
-    { id: 'art25', name: 'Volsung',                type: 'Dragon Priest', icon: '👺', collected: false, storageLocation: '', notes: '' },
-    { id: 'art26', name: 'Zahkriisos',             type: 'Dragon Priest', icon: '👺', collected: false, storageLocation: '', notes: '' },
-    { id: 'art27', name: 'Bloodskal Blade',        type: 'Unique',   icon: '⚔️',  collected: false, storageLocation: '', notes: '' },
-    { id: 'art28', name: 'Windshear',              type: 'Unique',   icon: '🗡️',  collected: false, storageLocation: '', notes: '' }
+    { id: 'art1',  name: 'Azura\'s Star',          type: 'Daedric',      icon: '⭐', collected: false, storageLocation: '', notes: '' },
+    { id: 'art2',  name: 'Black Star',              type: 'Daedric',      icon: '🌑', collected: false, storageLocation: '', notes: '' },
+    { id: 'art3',  name: 'Dawnbreaker',             type: 'Daedric',      icon: '⚔️',  collected: false, storageLocation: '', notes: '' },
+    { id: 'art4',  name: 'Ebony Blade',             type: 'Daedric',      icon: '🗡️',  collected: false, storageLocation: '', notes: '' },
+    { id: 'art5',  name: 'Ebony Mail',              type: 'Daedric',      icon: '🛡️',  collected: false, storageLocation: '', notes: '' },
+    { id: 'art6',  name: 'Mace of Molag Bal',       type: 'Daedric',      icon: '🔨', collected: false, storageLocation: '', notes: '' },
+    { id: 'art7',  name: 'Masque of Clavicus Vile', type: 'Daedric',      icon: '🎭', collected: false, storageLocation: '', notes: '' },
+    { id: 'art8',  name: 'Mehrunes\' Razor',        type: 'Daedric',      icon: '🔪', collected: false, storageLocation: '', notes: '' },
+    { id: 'art9',  name: 'Morokei (Staff)',         type: 'Daedric',      icon: '🪄', collected: false, storageLocation: '', notes: '' },
+    { id: 'art10', name: 'Namira\'s Ring',          type: 'Daedric',      icon: '💍', collected: false, storageLocation: '', notes: '' },
+    { id: 'art11', name: 'Oghma Infinium',          type: 'Daedric',      icon: '📕', collected: false, storageLocation: '', notes: '' },
+    { id: 'art12', name: 'Ring of Hircine',         type: 'Daedric',      icon: '🐺', collected: false, storageLocation: '', notes: '' },
+    { id: 'art13', name: 'Sanguine Rose',           type: 'Daedric',      icon: '🌹', collected: false, storageLocation: '', notes: '' },
+    { id: 'art14', name: 'Savior\'s Hide',          type: 'Daedric',      icon: '🧥', collected: false, storageLocation: '', notes: '' },
+    { id: 'art15', name: 'Skull of Corruption',     type: 'Daedric',      icon: '💀', collected: false, storageLocation: '', notes: '' },
+    { id: 'art16', name: 'Spellbreaker',            type: 'Daedric',      icon: '🛡️',  collected: false, storageLocation: '', notes: '' },
+    { id: 'art17', name: 'Volendrung',              type: 'Daedric',      icon: '⚒️',  collected: false, storageLocation: '', notes: '' },
+    { id: 'art18', name: 'Wabbajack',               type: 'Daedric',      icon: '🎪', collected: false, storageLocation: '', notes: '' },
+    { id: 'art19', name: 'Auriel\'s Bow',           type: 'Unique',       icon: '🏹', collected: false, storageLocation: '', notes: '' },
+    { id: 'art20', name: 'Auriel\'s Shield',        type: 'Unique',       icon: '🛡️',  collected: false, storageLocation: '', notes: '' },
+    { id: 'art21', name: 'Nightingale Bow',         type: 'Unique',       icon: '🏹', collected: false, storageLocation: '', notes: '' },
+    { id: 'art22', name: 'Nightingale Blade',       type: 'Unique',       icon: '🗡️',  collected: false, storageLocation: '', notes: '' },
+    { id: 'art23', name: 'Nightingale Armor',       type: 'Unique',       icon: '🧥', collected: false, storageLocation: '', notes: '' },
+    { id: 'art24', name: 'Konahrik',                type: 'Dragon Priest', icon: '👺', collected: false, storageLocation: '', notes: '' },
+    { id: 'art25', name: 'Volsung',                 type: 'Dragon Priest', icon: '👺', collected: false, storageLocation: '', notes: '' },
+    { id: 'art26', name: 'Zahkriisos',              type: 'Dragon Priest', icon: '👺', collected: false, storageLocation: '', notes: '' },
+    { id: 'art27', name: 'Bloodskal Blade',         type: 'Unique',       icon: '⚔️',  collected: false, storageLocation: '', notes: '' },
+    { id: 'art28', name: 'Windshear',               type: 'Unique',       icon: '🗡️',  collected: false, storageLocation: '', notes: '' }
   ],
 
   keybinds: [
-    { id: 'kb1',  action: 'Quick Save',            key: 'F5',        modifier: '',      category: 'UI',       notes: '' },
-    { id: 'kb2',  action: 'Quick Load',            key: 'F9',        modifier: '',      category: 'UI',       notes: '' },
-    { id: 'kb3',  action: 'Dodge Roll',            key: 'Alt',       modifier: '',      category: 'Combat',   notes: 'TK Dodge / TUDM' },
-    { id: 'kb4',  action: 'Sprint',                key: 'Shift',     modifier: '',      category: 'Combat',   notes: '' },
-    { id: 'kb5',  action: 'Eat / Drink',           key: 'N',         modifier: '',      category: 'Survival', notes: 'Survival Mode / Realistic Needs' },
-    { id: 'kb6',  action: 'Sleep / Rest',          key: 'B',         modifier: '',      category: 'Survival', notes: '' },
-    { id: 'kb7',  action: 'Rapid Cast Profile 1',  key: '1',         modifier: 'Ctrl',  category: 'Magic',    notes: '' },
-    { id: 'kb8',  action: 'Rapid Cast Profile 2',  key: '2',         modifier: 'Ctrl',  category: 'Magic',    notes: '' },
-    { id: 'kb9',  action: 'Shout / Power',         key: 'Z',         modifier: '',      category: 'Combat',   notes: '' },
-    { id: 'kb10', action: 'Favorites Menu',        key: 'Q',         modifier: '',      category: 'UI',       notes: '' }
+    { id: 'kb1',  action: 'Quick Save',            key: 'F5',   modifier: '',     category: 'UI',       notes: '' },
+    { id: 'kb2',  action: 'Quick Load',            key: 'F9',   modifier: '',     category: 'UI',       notes: '' },
+    { id: 'kb3',  action: 'Dodge Roll',            key: 'Alt',  modifier: '',     category: 'Combat',   notes: 'TK Dodge / TUDM' },
+    { id: 'kb4',  action: 'Sprint',                key: 'Shift',modifier: '',     category: 'Combat',   notes: '' },
+    { id: 'kb5',  action: 'Eat / Drink',           key: 'N',    modifier: '',     category: 'Survival', notes: 'Survival Mode / Realistic Needs' },
+    { id: 'kb6',  action: 'Sleep / Rest',          key: 'B',    modifier: '',     category: 'Survival', notes: '' },
+    { id: 'kb7',  action: 'Rapid Cast Profile 1',  key: '1',    modifier: 'Ctrl', category: 'Magic',    notes: '' },
+    { id: 'kb8',  action: 'Rapid Cast Profile 2',  key: '2',    modifier: 'Ctrl', category: 'Magic',    notes: '' },
+    { id: 'kb9',  action: 'Shout / Power',         key: 'Z',    modifier: '',     category: 'Combat',   notes: '' },
+    { id: 'kb10', action: 'Favorites Menu',        key: 'Q',    modifier: '',     category: 'UI',       notes: '' }
   ],
 
   followers: []
@@ -198,13 +204,71 @@ function deepMerge(target, source) {
   return result;
 }
 
+// ── Multi-character storage ───────────────────────────────────────────
+function _getCharsIndex() {
+  try {
+    const raw = localStorage.getItem(CHARS_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch(e) { return null; }
+}
+
+function _saveCharsIndex(index) {
+  localStorage.setItem(CHARS_KEY, JSON.stringify(index));
+}
+
+function getActiveCharId() {
+  return localStorage.getItem(ACTIVE_KEY) || 'char_default';
+}
+
+function getCharsIndex() {
+  return _getCharsIndex() || [];
+}
+
+function _migrateToMultiChar() {
+  const existing = localStorage.getItem(STORAGE_KEY);
+  const data = existing ? JSON.parse(existing) : JSON.parse(JSON.stringify(DEFAULT_STATE));
+  const id = 'char_default';
+  const name = data.character?.name || 'Character 1';
+  _saveCharsIndex([{ id, name, race: data.character?.race || '', level: data.character?.level || 1 }]);
+  localStorage.setItem(ACTIVE_KEY, id);
+  localStorage.setItem(`lorerim5_char_${id}`, JSON.stringify(data));
+}
+
+function createCharacter(name) {
+  const id = 'char_' + generateId();
+  const chars = getCharsIndex();
+  chars.push({ id, name: name || 'New Character', race: '', level: 1 });
+  _saveCharsIndex(chars);
+  const fresh = JSON.parse(JSON.stringify(DEFAULT_STATE));
+  fresh.character.name = name || '';
+  localStorage.setItem(`lorerim5_char_${id}`, JSON.stringify(fresh));
+  return id;
+}
+
+function switchCharacter(id) {
+  const currentId = getActiveCharId();
+  localStorage.setItem(`lorerim5_char_${currentId}`, JSON.stringify(window.appState));
+  localStorage.setItem(ACTIVE_KEY, id);
+  window.appState = loadState();
+}
+
+function deleteCharacter(id) {
+  const chars = getCharsIndex();
+  if (chars.length <= 1) return false;
+  if (id === getActiveCharId()) return false;
+  _saveCharsIndex(chars.filter(c => c.id !== id));
+  localStorage.removeItem(`lorerim5_char_${id}`);
+  return true;
+}
+
 // ── Load / Save ───────────────────────────────────────────────────────
 function loadState() {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!_getCharsIndex()) _migrateToMultiChar();
+    const activeId = getActiveCharId();
+    const raw = localStorage.getItem(`lorerim5_char_${activeId}`);
     if (!raw) return JSON.parse(JSON.stringify(DEFAULT_STATE));
     const saved = JSON.parse(raw);
-    // Merge saved into defaults so new default fields appear on updates
     return deepMerge(saved, DEFAULT_STATE);
   } catch(e) {
     console.warn('LoreRim: failed to load state, using defaults', e);
@@ -214,7 +278,17 @@ function loadState() {
 
 function saveState() {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(window.appState));
+    const activeId = getActiveCharId();
+    localStorage.setItem(`lorerim5_char_${activeId}`, JSON.stringify(window.appState));
+    // Keep index in sync with current char name/level
+    const chars = getCharsIndex();
+    const entry = chars.find(c => c.id === activeId);
+    if (entry) {
+      entry.name  = window.appState.character.name  || entry.name;
+      entry.race  = window.appState.character.race  || '';
+      entry.level = window.appState.character.level || 1;
+      _saveCharsIndex(chars);
+    }
   } catch(e) {
     console.error('LoreRim: failed to save state', e);
   }
@@ -234,6 +308,13 @@ function formatDate(isoStr) {
 function todayISO() {
   const d = new Date();
   return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+function formatDuration(minutes) {
+  if (!minutes) return '0m';
+  const h = Math.floor(minutes / 60);
+  const m = minutes % 60;
+  return h ? `${h}h ${m}m` : `${m}m`;
 }
 
 // Init global state

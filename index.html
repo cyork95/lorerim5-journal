@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LoreRim V — Character Journal</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#d4a843">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,8 +73,16 @@
       <div style="text-align:center;font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.18em;color:rgba(212,168,67,0.35);text-transform:uppercase;margin-top:0.2rem;">Character Journal</div>
     </div>
 
+    <!-- Character switcher (populated by app.js) -->
+    <div id="char-switcher"></div>
+
     <!-- Nav items (populated by app.js) -->
     <div id="sidebar-nav" style="flex:1;padding:0.5rem 0;"></div>
+
+    <!-- Session timer -->
+    <div style="padding:0 0.75rem 0.5rem;">
+      <div id="session-timer-area"></div>
+    </div>
 
     <!-- External Links -->
     <div style="padding:0.75rem 0.75rem 1rem;display:flex;flex-direction:column;gap:0.4rem;">

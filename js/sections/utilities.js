@@ -6,7 +6,7 @@ const ROLES    = ['Tank / Shield','Dual Wield DPS','Archer / Ranged','Mage / Cas
 const ECON_BUFFS = ['Fortify Barter Enchantment','Haggling Perks (Speech)','Khajiit Trade Passive','Merchant Friend (Perk)','Frenzy Potion Active','Fence Relationship'];
 const KB_CATEGORIES = ['UI','Combat','Magic','Survival','Dodging','Custom'];
 
-let openUtilPanels = { stance:true, economy:false, safety:false, artifacts:false, keybinds:false, followers:false };
+let openUtilPanels = { stance:true, economy:false, safety:false, artifacts:false, keybinds:false, followers:false, deaths:false };
 
 function renderUtilities() {
   document.getElementById('main-content').innerHTML = `
@@ -22,6 +22,7 @@ function renderUtilities() {
     ${renderArtifactsPanel()}
     ${renderKeybindsPanel()}
     ${renderFollowersPanel()}
+    ${renderDeathLogPanel()}
   </div>
 </div>`;
 }
@@ -405,4 +406,83 @@ function deleteFollower(id) {
   window.appState.followers = window.appState.followers.filter(f=>f.id!==id);
   saveState();
   document.getElementById(`fcard-${id}`)?.remove();
+}
+
+// ── G. DEATH LOG ─────────────────────────────────────────────────────
+const DEATH_CAUSES = ['Enemy','Fall Damage','Trap','Drowning','Disease','Poison','Magic','Friendly Fire','Bug / Script','Other'];
+
+function renderDeathLogPanel() {
+  const deaths = window.appState.deaths || [];
+  const total = deaths.length;
+  return utilPanel('deaths', '💀', `Death Log (${total} death${total!==1?'s':''})`, `
+    <div style="margin-bottom:0.75rem;display:flex;justify-content:space-between;align-items:center;">
+      <div style="font-size:0.8rem;color:#666;font-style:italic;">Every Requiem run ends here eventually.</div>
+      <button class="btn btn-sm" onclick="addDeathEntry()">+ Log Death</button>
+    </div>
+    <div id="death-log-list" style="display:flex;flex-direction:column;gap:0.4rem;">
+      ${deaths.length ? deaths.map(d => renderDeathRow(d)).join('') : '<div style="color:#555;font-style:italic;font-size:0.82rem;padding:0.5rem 0;">No deaths recorded. Stay vigilant.</div>'}
+    </div>`);
+}
+
+function renderDeathRow(d) {
+  return `<div style="display:grid;grid-template-columns:90px 1fr 1fr 1fr 2rem;gap:0.4rem;align-items:center;padding:0.4rem 0.5rem;background:#12121a;border-radius:3px;border-left:3px solid rgba(192,80,80,0.5);" id="death-row-${d.id}">
+    <div style="font-size:0.7rem;color:rgba(212,168,67,0.45);font-family:'Cinzel',serif;">Lv ${esc(String(d.level || '?'))}</div>
+    <input class="input" value="${esc(d.enemy)}" placeholder="Enemy / Cause…" style="font-size:0.78rem;"
+      onblur="updateDeath('${d.id}','enemy',this.value)">
+    <input class="input" value="${esc(d.location)}" placeholder="Location…" style="font-size:0.78rem;"
+      onblur="updateDeath('${d.id}','location',this.value)">
+    <select class="select" style="font-size:0.72rem;" onchange="updateDeath('${d.id}','cause',this.value)">
+      ${DEATH_CAUSES.map(c=>`<option value="${c}" ${d.cause===c?'selected':''}>${c}</option>`).join('')}
+    </select>
+    <button class="btn btn-sm btn-danger" style="padding:0.2rem 0.35rem;" onclick="deleteDeathEntry('${d.id}')">✕</button>
+  </div>
+  <div style="margin-left:0.5rem;margin-top:-0.2rem;margin-bottom:0.2rem;">
+    <input class="input" value="${esc(d.notes)}" placeholder="Notes (optional)…" style="font-size:0.74rem;color:#666;"
+      onblur="updateDeath('${d.id}','notes',this.value)">
+  </div>`;
+}
+
+function addDeathEntry() {
+  if (!window.appState.deaths) window.appState.deaths = [];
+  const d = {
+    id: generateId(),
+    date: todayISO(),
+    enemy: '',
+    location: '',
+    level: window.appState.character.level || 1,
+    cause: 'Enemy',
+    notes: ''
+  };
+  window.appState.deaths.unshift(d);
+  saveState();
+  // Re-render just the death log list
+  const list = document.getElementById('death-log-list');
+  if (list) {
+    list.innerHTML = window.appState.deaths.map(x => renderDeathRow(x)).join('');
+    // Update panel header count
+    const deaths = window.appState.deaths;
+    const total = deaths.length;
+    const header = document.querySelector('#util-body-deaths')?.closest('.util-panel')?.querySelector('.util-panel-header span:first-child');
+    if (header) header.textContent = `💀 Death Log (${total} death${total!==1?'s':''})`;
+  }
+}
+
+function updateDeath(id, field, val) {
+  if (!window.appState.deaths) return;
+  const d = window.appState.deaths.find(x => x.id === id);
+  if (d) { d[field] = val; saveState(); }
+}
+
+function deleteDeathEntry(id) {
+  window.appState.deaths = (window.appState.deaths || []).filter(d => d.id !== id);
+  saveState();
+  const row = document.getElementById(`death-row-${id}`);
+  if (row) {
+    row.nextElementSibling?.remove();
+    row.remove();
+  }
+  const deaths = window.appState.deaths;
+  const total = deaths.length;
+  const header = document.querySelector('#util-body-deaths')?.closest('.util-panel')?.querySelector('.util-panel-header span:first-child');
+  if (header) header.textContent = `💀 Death Log (${total} death${total!==1?'s':''})`;
 }

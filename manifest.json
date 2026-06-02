@@ -1,0 +1,17 @@
+{
+  "name": "LoreRim V — Character Journal",
+  "short_name": "LoreRim Journal",
+  "description": "Track your LoreRim 5 Skyrim modpack playthrough",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0d0d10",
+  "theme_color": "#d4a843",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
